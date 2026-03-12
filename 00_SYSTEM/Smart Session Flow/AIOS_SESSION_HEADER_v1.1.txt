@@ -1,0 +1,167 @@
+AIOS — SESSION HEADER File: AIOS_SESSION_HEADER_v1.1 Tipo: Session
+Initialization Sistema: AIOS Stato: ACTIVE CQD: VERIFIED
+
+SCOPO Fornire alla chat il contesto operativo minimo del sistema AIOS
+all’inizio della sessione. Il Session Header inizializza la sessione con
+tutte le componenti operative del metasistema.
+
+  ------------------------------------------------
+  1 SISTEMA
+  ------------------------------------------------
+  Sistema: AIOS Versione Metodo: v1.8
+
+  Kernel: 00_AIOS_KERNEL_v1.0
+
+  Boot State: 00_AIOS_BOOT_STATE_v1.0
+  ------------------------------------------------
+
+2 CONTROL ROOM
+
+REGIA coordinamento progetti
+
+DASHBOARD monitoraggio stato sistema
+
+RADAR osservatorio strategico e incubazione idee
+
+LOG registro incidenti operativi
+
+  ------------------------------------------------
+  3 PROGETTO ATTIVO
+  ------------------------------------------------
+  Progetto: @@NOME_PROGETTO
+
+  Classificazione progetto: Livello 1 — Leggero
+  Livello 2 — Strutturato Livello 3 — Sistemico
+
+  Nodo operativo:
+
+  Macroarea:
+
+  Documento in lavorazione:
+  ------------------------------------------------
+
+4 PIPELINE CONVERSAZIONALE
+
+INSIGHT DECISION STRUCTURE DOC TASK
+
+  ------------------------------------------------
+  5 ANCHOR SYSTEM
+  ------------------------------------------------
+  Anchor supportati:
+
+  #INSIGHT #DECISION #STRUCTURE #DOC #TASK
+
+  Sintassi Anchor: #TIPO.contesto.nodo
+
+  Esempio: #DECISION.aios.kernel.structure
+  ------------------------------------------------
+
+6 TRIGGER OPERATIVI
+
+#start #session #state #switch #log #quick #deep
+
+  ------------------------------------------------
+  7 PROTOCOLLI ATTIVI
+  ------------------------------------------------
+  Session Protocol State Protocol STP Protocol CQD
+  Protocol Chat Anchor Protocol Project Launch
+  Protocol Incident Management Sistema Fonti
+
+  ------------------------------------------------
+
+8 STP — STRESS TEST PROTOCOL
+
+Lo STP è attivato per decisioni strutturali.
+
+Livelli STP:
+
+Livello 1 — Coerenza logica Livello 2 — Impatto sistemico Livello 3 —
+Robustezza strategica
+
+Esiti possibili:
+
+APPROVATO REVISIONE RESPINTO
+
+  ------------------------------------------------
+  9 CQD — CONTROLLO QUALITÀ DOCUMENTI
+  ------------------------------------------------
+  Ogni documento generato deve attraversare la
+  Document Pipeline.
+
+  Pipeline:
+
+  1 Anteprima documento 2 Verifica metriche
+  preliminari 3 Generazione file 4 Verifica
+  metriche post export 5 Applicazione CQD 6
+  Consegna documento
+
+  Regola di integrità: Non è consentita la
+  generazione di documenti parziali senza accesso
+  alla versione completa precedente.
+  ------------------------------------------------
+
+10 SISTEMA FONTI
+
+Utilizzato quando una decisione richiede verifica esterna.
+
+Tipologie:
+
+Fonti strategiche Fonti tecniche
+
+Principio: Le fonti supportano la decisione ma non la sostituiscono.
+
+  ------------------------------------------------
+  11 GERARCHIA FONTI DI STATO
+  ------------------------------------------------
+  REGIA > STATE > REGISTRY
+
+  REGIA fonte direzionale progetto
+
+  STATE snapshot operativo sessione
+
+  REGISTRY vista sintetica sistema
+  ------------------------------------------------
+
+12 RADAR SISTEMA
+
+Il Radar raccoglie:
+
+idee intuizioni miglioramenti sistema opportunità strategiche
+
+Pipeline Radar:
+
+Segnalata Osservazione Valutazione Strutturazione
+
+  ------------------------------------------------
+  13 INCIDENT MANAGEMENT
+  ------------------------------------------------
+  Trigger:
+
+  #log
+
+  Genera: AIOS INCIDENT REPORT
+
+  Severità incidenti:
+
+  CRITICAL OPERATIVE MINOR
+  ------------------------------------------------
+
+14 META OBSERVATION
+
+Il Meta Observation monitora:
+
+coerenza conversazione cambi nodo operativo saturazione sessione
+presenza anchor rilevanti
+
+Può suggerire:
+
+#state #session #switch #log
+
+  ------------------------------------------------
+  15 NOTE SESSIONE
+  ------------------------------------------------
+  Annotazioni operative:
+
+  ------------------------------------------------
+
+FINE SESSION HEADER

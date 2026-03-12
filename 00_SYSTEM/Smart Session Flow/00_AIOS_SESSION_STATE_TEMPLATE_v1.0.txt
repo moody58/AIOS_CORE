@@ -1,0 +1,81 @@
+AIOS — SESSION STATE
+File: AIOS_SESSION_STATE_TEMPLATE_v1.0
+Tipo: Session Snapshot
+Stato: TEMPLATE
+CQD: VERIFIED
+
+Scopo
+Registrare lo stato operativo della sessione AIOS.
+
+------------------------------------------------
+1 SISTEMA
+------------------------------------------------
+
+Sistema
+AIOS
+
+Versione sistema
+AIOS v1.8
+
+Kernel
+00_AIOS_KERNEL_v1.0
+
+------------------------------------------------
+2 SESSIONE
+------------------------------------------------
+
+Data sessione
+
+Chat origine
+
+Modalità
+
+#quick
+oppure
+#deep
+
+------------------------------------------------
+3 PROGETTO ATTIVO
+------------------------------------------------
+
+Progetto
+
+@@NOME_PROGETTO
+
+Nodo operativo
+
+------------------------------------------------
+4 STATO PROGETTO
+------------------------------------------------
+
+Ultima decisione
+
+Ultima struttura definita
+
+Documento in lavorazione
+
+------------------------------------------------
+5 NODO OPERATIVO
+------------------------------------------------
+
+Task attivo
+
+Prossimo step operativo
+
+------------------------------------------------
+6 INCIDENTI COLLEGATI
+------------------------------------------------
+
+Incidenti aperti
+
+LOG-XXX
+
+------------------------------------------------
+7 NOTE SESSIONE
+------------------------------------------------
+
+Annotazioni operative
+
+------------------------------------------------
+FINE SESSION STATE
+------------------------------------------------
