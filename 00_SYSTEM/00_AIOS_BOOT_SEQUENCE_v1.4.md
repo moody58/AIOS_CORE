@@ -1,6 +1,6 @@
 # AIOS --- BOOT SEQUENCE
 
-Documento: 00_AIOS_BOOT_SEQUENCE
+Documento: 00\_AIOS\_BOOT\_SEQUENCE
 
 Versione: v1.4
 
@@ -14,7 +14,7 @@ Anno: 2026
 
 La Boot Sequence definisce la sequenza di attivazione
 
-del sistema AIOS all\'inizio di una sessione operativa.
+del sistema AIOS all'inizio di una sessione operativa.
 
 La sequenza consente di:
 
@@ -32,31 +32,41 @@ AIOS opera come Control Room del metasistema
 
 dei progetti.
 
-All\'avvio di una sessione il sistema esegue
+All'avvio di una sessione il sistema esegue
 
 una sequenza di controllo per ricostruire
 
 il contesto operativo.
 
-3\. SEQUENZA DI AVVIO
+\## SEQUENZA DI AVVIO (PATCH RUNTIME)
 
-La sequenza standard di avvio del sistema è:
 
-1 --- Identificazione del contesto della sessione
 
-2 --- Identificazione del progetto attivo
+1 identificazione contesto sessione
 
-3 --- Recupero dello stato del progetto
+2 identificazione progetto
 
-4 --- Verifica coerenza delle fonti di stato
+3 verifica Kernel Manifest
 
-5 --- Individuazione del nodo operativo
+4 attivazione Runtime Layer
 
-6 --- Avvio della sessione operativa
+5 recupero stato progetto
 
-4\. IDENTIFICAZIONE DEL CONTESTO
+6 verifica coerenza fonti
 
-All\'inizio della sessione AIOS analizza il contesto
+7 individuazione nodo operativo
+
+8 avvio sessione operativa
+
+
+
+\## NOTE
+
+L'introduzione dei passaggi 3 e 4 garantisce che il Runtime Kernel
+
+sia sempre attivato prima dell'avvio della sessione.4. IDENTIFICAZIONE DEL CONTESTO
+
+All'inizio della sessione AIOS analizza il contesto
 
 per comprendere:
 
@@ -68,13 +78,13 @@ per comprendere:
 
 I trigger operativi possono includere:
 
-#start
+\#start
 
-#session
+\#session
 
-#quick
+\#quick
 
-#deep
+\#deep
 
 5\. IDENTIFICAZIONE DEL PROGETTO
 
@@ -86,11 +96,11 @@ linguaggio naturale
 
 oppure
 
-@@NOME_PROGETTO
+@@NOME\_PROGETTO
 
 Il progetto deve essere presente nel documento:
 
-Project_Index
+Project\_Index
 
 6\. RECUPERO DELLO STATO
 
@@ -140,7 +150,7 @@ Per garantire coerenza del sistema
 
 si applica la gerarchia:
 
-REGIA \> STATE \> REGISTRY
+REGIA > STATE > REGISTRY
 
 REGIA
 
@@ -168,7 +178,7 @@ AIOS individua il nodo operativo principale.
 
 Il nodo operativo rappresenta:
 
-\- l\'attività su cui si concentra la sessione
+\- l'attività su cui si concentra la sessione
 
 \- il punto di avanzamento del progetto
 
@@ -232,3 +242,4 @@ Integrazione con separazione AIOS / LOGOS Engine.
 v1.2
 
 Versione precedente della Boot Sequence.
+
