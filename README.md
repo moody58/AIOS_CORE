@@ -42,6 +42,24 @@ Instead, it:
 
 ## System Architecture
 
+
+---
+
+# 🧠 Versione leggermente più evoluta (se vuoi più impatto)
+
+```markdown
+```text
+                AIOS
+     (Method & Governance Layer)
+                      │
+        ┌─────────────┴─────────────┐
+        │                           │
+     LOGOS                     Projects
+ (Data & Analytics)       (Execution Layer)
+        │                           │
+ Event Processing         Structured Workflows
+ & Data Modeling          (via AIOS Template)
+
 AIOS is structured as a three-layer metasystem:
 
 ```
