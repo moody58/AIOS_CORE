@@ -191,8 +191,8 @@ The goal is not to automate thinking, but to **augment structured thinking**.
 
 AIOS acts as the governance layer of a broader system composed of:
 
-- **LOGOS** — the data engine handling event processing and analytics  
-- **AIOS_PROJECT_TEMPLATE** — the framework used to initialize and structure projects  
+- **LOGOS** [https://github.com/moody58/logos] — the data engine handling event processing and analytics  
+- **AIOS_PROJECT_TEMPLATE** [https://github.com/moody58/aios_project_template] — the framework used to initialize and structure projects  
 
 Together, these components form a modular system connecting method, data, and execution.
 
