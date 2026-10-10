@@ -42,7 +42,7 @@ param(
         'Transaction.Core.ps1'='44f1a9abf397982095ecbaf34469e502343a28b34336ca24a6b6fb76f110ba97'
         'Recovery.Core.ps1'='650a52268a7c9f267112c2bac78136d8d8ade780132641479a433b232d68696e'
         'DocumentApply.Adapter.ps1'='f77d0140a6a57f86d9f9564e23523ff89c1002e9ac8be7c309d4c493c4306997'
-        'ProductionScope.Adapter.ps1'='3eef98648e4b0a02766438f173e81dbfe92e020ff98297516d2007a2158cb334'
+        'ProductionScope.Adapter.ps1'='493cb585f6a171cff43ef4d47094e60557b224d702d3001db8b50dd886701869'
         'ApprovalProtocol.Core.ps1'='130417e6bc1ac3d40b4c605d6c626632e5905ca453fef93d27b102e9d6d5261c'
     }
     foreach($name in $bindings.Keys){

@@ -170,6 +170,9 @@ function Assert-AIOSCodexSemanticConfig {
         if($section -ceq ''){
             if($key -ceq 'default_permissions' -and $Role -ceq 'Project'){$operational[$key]=$value}
             elseif(@('sandbox_mode','approval_policy','approvals_reviewer') -ccontains $key){$operational[$key]=$value}
+            elseif($key -ceq 'service_tier'){
+                if($Role -cne 'User' -or $value -cne 'priority'){throw 'STOP: service_tier requires targeted review; only the acquired User priority value is supported.'}
+            }
             elseif(@('model','model_reasoning_effort','model_verbosity','personality') -cnotcontains $key){throw ('STOP: configuration key requires targeted review: '+$key)}
         }elseif($section -ceq 'permissions.aios_readonly'){
             if($key -ceq 'description'){$profileDescription=$value}
