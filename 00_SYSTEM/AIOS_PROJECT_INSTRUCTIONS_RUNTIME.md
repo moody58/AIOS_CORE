@@ -2,7 +2,7 @@ AIOS — AI Operating System
 
 Versione contenuto: v3.2
 Stato revisione: allineamento documentale P3; nessuna abilitazione globale
-Nome file stabile: AIOS_PROJECT_INSTRUCTIONS_RUNTIME_v3.md
+Nome file stabile: AIOS_PROJECT_INSTRUCTIONS_RUNTIME.md
 
 
 
