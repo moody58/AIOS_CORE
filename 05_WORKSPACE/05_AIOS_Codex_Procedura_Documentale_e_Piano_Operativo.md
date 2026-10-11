@@ -1,13 +1,13 @@
 # 05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo
 
 Documento: procedura documentale ChatGPT / Codex in VS Code e piano operativo consolidato
-Versione: v1.1
-Data: 2026-10-09
+Versione: v1.2
+Data: 2026-10-10
 Sistema: AIOS — progetto AIOS_CORE
 Tipo: documento operativo di workspace, destinato alla repository
 Destinazione: `05_WORKSPACE/05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo.md`
-Stato del file: preimage locale acquisita e presente non tracciata; attivazione v1.1 condizionata a provisioning autorizzato e Verify
-Stato della procedura: cinque cicli P3 tracciati chiusi; tre non tracciati, commit e portabilità ancora da completare
+Stato del file: v1.1 locale tracciata e committata; proposta v1.2 subordinata a Check, review, consenso e Apply/Verify
+Stato della procedura: P3 chiuso nel proprio scope; compatibilità guard e file locali esclusi verificata sul nuovo HEAD; P4 in chiusura documentale; portabilità P5/P6 aperta
 Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 
 ## Indice
@@ -35,7 +35,7 @@ Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 
 Questo documento è il punto d'ingresso stabile per conoscere il flusso documentale, riprendere il suo sviluppo e trovare sorgenti e prove. Distingue il funzionamento acquisito, la capacità da completare e le integrazioni future. Non ricostruisce i documenti precedenti mediante sintesi e non modifica la Regia, il Registry o i protocolli canonici.
 
-La destinazione è la root Git `C:\AIOS_GITHUB\AIOS_CORE`, nell'area `05_WORKSPACE`. Il nome resta stabile; le revisioni cambiano nel contenuto e nella history. Il file omonimo è già presente non tracciato: questa revisione richiede REPLACE della preimage locale esatta, non CREATE. Questo file non viene aggiunto al Kernel come nuova dipendenza obbligatoria di tutte le sessioni AIOS.
+La destinazione è la root Git `C:\AIOS_GITHUB\AIOS_CORE`, nell'area `05_WORKSPACE`. Il nome resta stabile; le revisioni cambiano nel contenuto e nella history. Il file omonimo è ora tracciato: questa revisione usa il bridge documentale ordinario, modify_ranges sulla preimage locale esatta. Il precedente provisioning dei tre file non tracciati è storico e concluso nel suo scope. Questo file non viene aggiunto al Kernel come nuova dipendenza obbligatoria di tutte le sessioni AIOS.
 
 Il documento governa la ripartenza di questo nodo, ma non sostituisce il codice, i contratti, le prove native, i backup e le fonti della repository. Un risultato operativo richiede la relativa evidenza. Le copie dei protocolli incluse nel pacchetto sono fonti acquisite dello snapshot precedente, non una nuova lettura live della root.
 
@@ -89,24 +89,37 @@ I permessi GUI sono stati dichiarati read-only nelle evidenze. Versione attiva d
 
 L'ultima readiness osserva Desktop 5.1.26100.8655, FullLanguage, PID 22584. Non estende questo dato alle Apply/Verify precedenti, i cui host/PID non sono tutti esposti. Il semplice profilo TOML non dimostra i permessi della sessione.
 
-## 3.1 Stato corrente acquisito al 9 ottobre 2026
+## 3.1 Stato corrente acquisito al 10 ottobre 2026
 
-La sezione 3 e la sezione 4 conservano il primo ciclo: non descrivono i limiti del bridge successivo. P1 ha 25/25 PASS nativi isolati, P2 21/21, con review distinte. Il setup successivo ha verificato undici moduli runtime. Non sono undici documenti: l'acquisizione P3 ha contato 32 Markdown, 52 file Git visibili e 24 dirty (7 modified, 17 untracked).
+Le sezioni 3 e 4 conservano il primo ciclo. P1 ha 25/25 PASS nativi isolati e P2 21/21, con review distinte. Gli undici file runtime non sono il numero dei documenti: l'acquisizione P3 aveva contato 32 Markdown, 52 file Git visibili e 24 dirty.
 
 | Blocco | Stato acquisito | Residuo |
 | --- | --- | --- |
-| P1/P2 | Review concluse nel proprio ambito | Non ripetere le suite immutate |
-| P3, cinque tracciati | Kernel, Backup/GitHub, Runtime v1.6, Instructions v3.2 e Index v1.4: Apply/Verify/review chiuse | Conservare i nuovi byte locali |
-| Run accorpato | Instructions e Index: Apply singola, gate, Verify in processo distinto, raccolta unica | Binding e consenso propri per ogni nuova azione |
-| P3, tre non tracciati | Contratto, AGENTS e questo manuale già presenti: proposta coordinata | Provisioning separato, tre REPLACE; nessuna scrittura ancora attestata |
-| P4 | Nessun commit automatico o baseline adottata | Review degli altri pendenti, commit selettivo manuale e nuovo HEAD |
-| P5/P6 | Ancora aperti | Profilo di un'altra repo, primo uso documentale utile e chiusura misurata |
+| P1/P2 | Review concluse nel proprio ambito | Riutilizzare qualificazioni immutate |
+| P3, cinque tracciati | Kernel, Backup/GitHub, Runtime v1.6, Instructions v3.2 e Index v1.4: cicli chiusi | Conservare byte locali e prove |
+| P3, tre file allora non tracciati | Provisioning V04: tre REPLACE, Verify indipendente e raccolta PASS | Contratto, AGENTS e manuale ora tracciati; nessuna nuova installazione implicita |
+| P4, primo commit | Commit selettivo di 22 file: 5fdc73a98f5a83d031aa3fa3ede5f74dc9276306; push manuale riferito dall'utente | I due file locali sono esclusi tramite .git/info/exclude |
+| P4, guard installato | Nove casi guard riutilizzati; sei casi della release tracciata PASS; Plan, tre REPLACE runtime, Verify indipendente e attivazione PASS | Nessuna estensione automatica ad altre chiavi o repo |
+| P4, nuovo commit | HEAD e riferimento locale origin/main e022b4d2dcb7dc2c15f502b240608aa2293934d4; working copy pulita, nessuno staged nel precontrollo storico | Il successivo rilascio ha introdotto quattro runtime modificati e verificati, ancora da committare |
+| P4, file locali esclusi | Dieci casi isolati PASS; sei casi setup riutilizzati; Plan/Install di quattro runtime e Verify indipendente PASS | Config e tasks restano locali; altri pathname ignorati o variazioni concorrenti restano rifiutati |
+| P4, Check manuale precedente | Ripresa V02: Check e raccolta PASS, 46 secondi, nessuna scrittura; proposta precedente SHA-256 32a3729ca084f36ed1c07a2678d59413e6c9135fa4d2ca29ba2f1c59fc745636 | Questa proposta aggiorna receipt e stato; richiede un nuovo Check del proprio diff e consenso prima dell'Apply |
+| P5/P6 | Aperti | Profilo di un'altra repo, primo uso documentale utile e chiusura misurata |
 
-Ultimo riferimento: SOURCE_SNAPSHOT.json post-Index, SHA-256 `702c6cc0988032edf7876cfcf35c804914bb91d7ccec486fc300f3624bc826c6`. Root AIOS_CORE, branch main, HEAD `9483009e4e9a6bc547a256e7b6a70775731e8547`; indice SHA-256 `76a301620fecb6e2bd7d9d14e50f06ed6cf01d90d072f878cc342492149ce86b`. È uno snapshot acquisito dell'azione, da ricontrollare live; non una baseline globale adottata.
+Il push è stato eseguito manualmente dall'utente. Il precontrollo osserva il riferimento locale origin/main: non è un'interrogazione live del server. Il nuovo Run riacquisisce l'indice corrente e lo conserva durante l'operazione; il vecchio hash dell'indice resta storico e non viene imposto dopo il commit.
 
-Gli ultimi Run accorpati hanno impiegato 79 secondi ciascuno secondo i resoconti locali. È durata meccanica di quelle istanze, distinta da review, letture GUI e tempo totale di conversazione; non una garanzia di prestazioni future. Non sono qualificate una transazione atomica dei tre file, un installer universale o la portabilità LOGOS.
+La release guard ammette service_tier = "priority" nel ruolo User, secondo il controllo semantico qualificato. La configurazione Project resta soggetta al proprio controllo. Le configurazioni vengono acquisite e conservate durante ogni singolo Run; un cambiamento operativo consentito tra Run non autorizza variazioni concorrenti durante l'azione.
 
-Le prove dei nuovi cicli prevalgono per il relativo stato operativo; i resoconti del primo ciclo restano storici. Il pilota R2.1 resta KEEP. CQD e Registry contengono modifiche preesistenti: gli hash non costituiscono approvazione semantica di quei delta.
+Receipt VERIFIED precedente della release guard: C:\AIOS_MIGRAZIONE\AIOS_R22_RELEASE_SETUP\f4862a1d888043409e681b794e8846da\setup_receipt.json; SHA-256 3080846e9f8f127dae2a4d79ad483fd9498b2e84827b5d04d7a9b0df9f223a03. Report storico: C:\AIOS_MIGRAZIONE\AIOS_R22_RELEASE_SETUP\b5b3a1745f654904b45446051f9695b7\REPORT.json; SHA-256 f06c5ebc19f07e17a56aa187a1f2c593faca2d9ee642636899785ccc8f72c1b2. Entrambi restano conservati.
+
+Receipt VERIFIED corrente dopo il rilascio di Transaction.Core.ps1, ProductionScope.Adapter.ps1 e dei due entrypoint: C:\AIOS_MIGRAZIONE\AIOS_R22_RELEASE_SETUP\4ae095a490934f8dafae271753fe246e\setup_receipt.json; SHA-256 4d2ae82ddc1402187a858c96e442227e328d21aea4c465aee27f2abd92e5418e. Il Check successivo con i due file locali esclusi è PASS; non estende la capacità ad altre repository.
+
+Prove del Check precedente: check_report.json in C:\AIOS_MIGRAZIONE\CODEX_DOCUMENT_APPLY_EVIDENCE\f168281134c54c2ca115f27d433138af\check_3865f06358594f92b40273b8abf202f1, SHA-256 57dc046d9f3493d8d8b4b2d2e7d7109d6911c436d0535148a6734ca0a955dfcc. ZIP compatto C:\AIOS_MIGRAZIONE\AIOS_P4_MANUAL_CHECK_RESUME_EVIDENZE\2fedb84b6bd84ffd832b2e6529c6757c.zip, SHA-256 39893216b70a668a7109b7eb5002164a97f5df62c84a302d0cd6a337969623b3. Il PASS riguarda i byte della proposta precedente; non sostituisce il Check della presente revisione né autorizza l'Apply.
+
+Instructions e Index hanno completato Run accorpati di 79 secondi ciascuno; la release guard V02 ha impiegato circa 35 secondi nel launcher. Sono durate meccaniche di istanze specifiche, distinte da review e conversazione. Non qualificano una transazione multi-documento, un installer universale o la portabilità LOGOS. Baseline non adottata; production_ready=false.
+
+Riferimento storico post-Index: SOURCE_SNAPSHOT.json, SHA-256 `702c6cc0988032edf7876cfcf35c804914bb91d7ccec486fc300f3624bc826c6`; HEAD `9483009e4e9a6bc547a256e7b6a70775731e8547`, indice `76a301620fecb6e2bd7d9d14e50f06ed6cf01d90d072f878cc342492149ce86b`. È uno snapshot della precedente azione, non il binding del nuovo Check né una baseline adottata.
+
+Le prove dei nuovi cicli prevalgono per il relativo stato operativo; i resoconti del primo ciclo restano storici. Il pilota R2.1 resta KEEP. Gli hash dei delta preesistenti CQD e Registry non costituiscono da soli approvazione semantica; il commit selettivo conserva quei contenuti.
 
 ## 4. Procedura acquisita nel primo ciclo — storico del 5 ottobre
 
@@ -126,16 +139,16 @@ I PASS isolati del nucleo e dei bridge sono prove dei componenti. Non dichiarano
 2. Leggere i target completi della working copy sul PC e vincolare hash e snapshot. Le modifiche non committate sono contenuto da preservare, non un errore da ripulire o sostituire con GitHub.
 3. Preparare postimage, diff completo, range, metriche e pin. Più proposte possono stare in un pacchetto coordinato; ogni scrittura conserva scope e decisione propri. Per i tre non tracciati usare un provisioning separato, non il bridge ordinario.
 4. Consegnare un messaggio breve che richiama HANDOFF_GUI.txt. Il pacchetto dichiara una sola cartella di estrazione e pathname assoluti; il launcher è un file diretto verificato, non un comando riscritto dalla GUI.
-5. Completare le fonti richieste prima delle operazioni dipendenti. Letture numerate fino a 40 righe con Get-Content/Select-Object; nessun metodo .NET necessario in ConstrainedLanguage. Riutilizzo nella stessa sessione solo dopo controllo degli hash. Troncamenti o pathname preliminari errati si segnalano e si completano in sola lettura, se consentito dall'handoff; non generano un nuovo Run.
+5. Completare le letture richieste prima delle operazioni dipendenti. Quando l'utente autorizza una deroga puntuale, la GUI legge handoff, checkpoint, review e diff; launcher/task nativi leggono integralmente target, fonti e materiali tecnici, con pin, parser e registrazione separata. La deroga deve essere esplicita nel messaggio e limitata al pacchetto: questo manuale non sostituisce da solo AGENTS. Le eventuali letture GUI usano UTF-8 e blocchi consecutivi fino a 40 righe con Get-Content/Select-Object; niente metodi .NET nel contesto vincolato. Blocchi mancanti o troncati si completano in lettura secondo l'handoff, senza un nuovo Run.
 6. Osservare il processo effettivo e usare soltanto l'approvazione puntuale prevista. Read-only dichiarato non equivale a richiesta di escalation vietata; un rifiuto non si aggira. Nessuna modifica di policy, LanguageMode o profili.
 7. Preparazione e Check senza scrittura; review semantica del diff e consenso specifico prima di Apply. La richiesta iniziale di preparazione non autorizza l'aggiornamento dei documenti.
 8. Nel percorso qualificato, un solo Run può eseguire backup/journal, Apply singola, controllo locale post-Apply, Verify in processo distinto e raccolta finale. Prima della scrittura rileggere integralmente il target e confrontare byte per byte la preimage. HEAD, indice e file estranei restano invarianti.
 9. Dopo l'invio operativo, STOP al primo errore senza retry, cleanup o correzioni automatiche. Conservare parziali e log persistenti. Attendere la stessa sessione se attiva; non rilanciare un processo di esito UNKNOWN. Una ripresa autorizzata verifica parziali e non ripete fasi già PASS.
 10. Raccogliere una sola evidenza compatta: manifest, hash, diff completo, receipt, journal, log e file coinvolti. Audit globale solo ai checkpoint che lo richiedono. Il task stampa i pin finali; nessun comando hash GUI supplementare soltanto per riepilogarli. Un fallimento di collector non annulla una Apply né permette di ripeterla.
-11. Dopo review, classificare tutti i pendenti prima del commit selettivo manuale in VS Code. Nessuno staging globale, commit o push automatico. Pilota storico e contenuti estranei restano preservati.
+11. Dopo review, classificare i pendenti ed eseguire commit e push selettivi dall'interfaccia VS Code. Il commit salva la storia locale; il push pubblica il commit remoto. Una lista modifiche vuota non prova la pubblicazione su GitHub. I file /.codex/config.toml e /.vscode/tasks.json restano locali tramite .git/info/exclude; non si modifica il .gitignore condiviso soltanto per queste preferenze. Nessuno staging globale o push automatico.
 12. Acquisire il nuovo HEAD e verificare la prosecuzione senza assumere compatibili vecchi snapshot o decisioni. Altra repo: prima profilo esplicito, fonti locali, qualificazione limitata e primo uso utile; nessuna operazione DB implicita.
 
-Questi passi riducono gli avvii manuali senza eliminare controlli di contenuto o consenso. L'accorpamento operativo è già acquisito per Instructions e Index; il provisioning dei tre non tracciati richiede ancora implementazione e qualificazione proprie. Per ogni nodo completato: percentuale indicativa, stato attuale, prossimo nodo e residuo. Le percentuali non sostituiscono i criteri di chiusura P0–P6.
+Il percorso ordinario mantiene due passaggi utente: preparazione/Check con review del diff; dopo consenso specifico, Apply con gate, Verify in processo distinto e raccolta unica. L'accorpamento è acquisito nei cicli Instructions e Index; il provisioning dei tre file e la successiva release guard hanno qualificazioni proprie concluse. Non ripetere suite immutate a ogni documento: verificare il nuovo target e i suoi binding correnti. Per ogni nodo completato: percentuale indicativa, stato attuale, prossimo nodo e residuo. Le percentuali non sostituiscono i criteri di chiusura P0–P6.
 
 ## 6. Comando universale conversazionale
 
@@ -156,7 +169,7 @@ Se mancano le preimage, si avvia soltanto la preparazione/raccolta necessaria, n
 
 ## 7. Contratto del pacchetto per documento
 
-Il formato per documento è stato usato nei cinque cicli P3 tracciati. Un pacchetto coordinato può raccogliere più proposte, senza dichiarare una nuova transazione multi-documento. Il piano dei tre non tracciati è dichiarativo e non è un DOC-HANDOFF eseguibile dal bridge ordinario.
+Il formato per documento è stato usato nei cinque cicli P3 tracciati. Un pacchetto coordinato può raccogliere più proposte, senza dichiarare una nuova transazione multi-documento. Il piano storico dei tre non tracciati è stato eseguito tramite provisioning separato. Il manuale ora tracciato può usare un DOC-HANDOFF ordinario per una nuova proposta e un nuovo Check.
 
 | Contenuto | Funzione |
 | --- | --- |
@@ -177,19 +190,19 @@ Gli ZIP di installazione/versione, gli ZIP di lavoro e gli ZIP delle prove hanno
 
 La semplificazione non consiste nel disabilitare i controlli sull'HEAD o nell'accettare qualsiasi directory. Il target e l'HEAD devono provenire da un nuovo contesto verificato e dal pacchetto approvato. Durante la singola transazione HEAD, indice e file estranei restano invarianti.
 
-Lo stato attuale contiene modifiche preesistenti. Una working tree sporca non va ripulita automaticamente: lo snapshot le identifica e il motore le preserva. Il commit dell'utente avviene tra transazioni; il successivo Check usa un nuovo contesto vincolato.
+Il precontrollo del 10 ottobre osserva una working tree pulita. Quando esistono modifiche preesistenti, non vanno ripulite automaticamente: lo snapshot le identifica e il motore le preserva. Il commit dell'utente avviene tra transazioni; il successivo Check usa un nuovo contesto vincolato.
 
-La baseline candidata esistente non è stata adottata. Il meccanismo futuro di prosecuzione va progettato e verificato senza convertire implicitamente una candidata in autorizzazione. Vecchie request e claim rimangono prove storiche e non vengono cancellate per riusarle.
+Le baseline candidate storiche non sono state adottate. La prosecuzione sul nuovo commit acquisisce un riferimento dell'azione con HEAD, indice, fonti e contenuti locali correnti; non converte una candidata in autorizzazione. Il Check utile sul nuovo HEAD con la compatibilità dei file esclusi è attestato dal resoconto nativo e dai pin indicati in sezione 3.1. I nuovi diff mantengono Check e consenso propri; non si riusa quel PASS per byte diversi. Vecchie request e claim rimangono prove storiche e non vengono cancellate per riusarle.
 
 Se i pacchetti sono generati insieme, l'ordine deve essere dichiarato. I contenuti possono essere predisposti nella stessa sessione, ma i binding tecnici dei successivi devono corrispondere allo stato effettivo consentito. Modifiche manuali concorrenti, nuove fonti o commit intermedi richiedono ricontrollo; non è obbligatorio rigenerare tutti i contenuti immutati.
 
-Configurazioni, AGENTS e runtime non si aggiornano tramite un normale Apply documentale. L'allineamento di tali file usa un piano di provisioning separato. Questo documento è già presente non tracciato, come contratto e AGENTS: il loro aggiornamento richiede tre REPLACE nel provisioning separato, con backup e verifica di tutti i byte. Il vecchio installer accetta soltanto gli undici runtime: non lo si estende tramite un manifest artificiale. Non mettere in stage i tre file per aggirare il bridge. Nessuna nuova CREATE, reinstallazione runtime o atomicità globale dei tre file è implicita. Nessuna consegna equivale già a scrittura nella root.
+Configurazioni, AGENTS e runtime non si aggiornano tramite un normale Apply documentale. L'allineamento di tali file usa un piano di provisioning separato. Contratto, AGENTS e manuale sono stati sostituiti dal provisioning separato e poi committati. Un futuro aggiornamento di AGENTS/config/runtime richiede ancora il percorso specifico; questo manuale tracciato rientra invece nel bridge documentale ordinario, con un solo target e range approvati. Il vecchio installer accetta soltanto gli undici runtime: non lo si estende tramite un manifest artificiale. Non mettere in stage i tre file per aggirare il bridge. Nessuna nuova CREATE, reinstallazione runtime o atomicità globale dei tre file è implicita. Nessuna consegna equivale già a scrittura nella root.
 
 ## 9. Documenti pendenti e riallineamento
 
-L’elenco seguente conserva lo snapshot del 5 ottobre (23 dirty); il riferimento corrente della sezione 3.1 ne registra 24, incluso questo manuale. I cinque tracciati P3 sono chiusi; restano i tre REPLACE di provisioning. Gli altri delta richiedono classificazione propria per P4, non una nuova Apply automatica.
+L'elenco seguente è storico: snapshot del 5 ottobre (23 dirty), poi 24 includendo il manuale. P3 e il commit selettivo dei 22 file sono conclusi nel proprio scope. Dopo il commit della release guard, il precontrollo del 10 ottobre osserva working copy pulita e nessuno staged. I due file locali esclusi non sono pendenti da pubblicare. Dopo quel precontrollo sono stati sostituiti e verificati quattro runtime; restano modifiche locali dichiarate, da preservare e committare selettivamente dopo la chiusura documentale. Non ricreare lo stato storico né applicare di nuovo i suoi aggiornamenti.
 
-L'ultima cattura acquisita osserva 7 tracked modificati e 16 untracked. Non è uno status live dopo il salvataggio dell'archivio da parte dell'utente. Il nuovo documento e un eventuale archivio dentro una root Git potrebbero cambiare l'elenco; ricatturarlo prima di preparare i commit.
+La cattura storica del 5 ottobre osservava 7 tracked modificati e 16 untracked. Non è uno status live dopo il salvataggio dell'archivio da parte dell'utente. Il nuovo documento e un eventuale archivio dentro una root Git potrebbero cambiare l'elenco; ricatturarlo prima di preparare i commit.
 
 Tracked modificati:
 
@@ -217,6 +230,8 @@ Allineare le istruzioni storiche R1/R2.1 e i riferimenti a CLI, target unico e g
 Commit suggeriti per scopo coerente, se i diff lo consentono: runtime/configurazione; contratti e documentazione; altre modifiche precedenti approvate. Il raggruppamento finale dipende dalla review live, non è già deciso. L'utente usa staging selettivo e Commit; nessun `git add` globale, commit o push automatico.
 
 ## 10. Piano operativo consolidato e calendario obiettivo
+
+Stato al 10 ottobre: P1/P2 qualificati nel proprio ambito; P3 concluso; compatibilità operativa P4 verificata sul commit e022b4d; chiusura documentale e commit dei nuovi delta pendenti; P5/P6 aperti. Il calendario seguente conserva obiettivi e criteri, non è una promessa di ore residue.
 
 La settimana obiettivo termina domenica 11 ottobre 2026, Europe/Paris. Il calendario è un obiettivo operativo e non una garanzia di durata. Riguarda il flusso documentale essenziale, non la chiusura dell'intero sviluppo LOGOS/Retool/ASPRI/Adexima. La precedente stima fino a 30 ore includeva un perimetro più ampio e non è una soglia obbligatoria.
 
@@ -326,11 +341,11 @@ Esito complessivo: APPROVATO nella versione consolidata di questo documento. Non
 
 ## 16. Checkpoint, switch e regole di continuità
 
-Progetto attivo: AIOS_CORE. Classificazione: integrazione documentale ChatGPT / Codex VS Code. Macroarea: AIOS CODEX DOCUMENT WORKFLOW. Nodo corrente: cinque tracciati P3 chiusi, proposta coordinata per tre file esistenti non tracciati. Prossimo nodo: piano locale e provisioning puntuale dopo consenso; poi P4 commit e nuovo HEAD.
+Progetto attivo: AIOS_CORE. Classificazione: integrazione documentale ChatGPT / Codex VS Code. Macroarea: AIOS CODEX DOCUMENT WORKFLOW. Nodo corrente: P4, compatibilità guard e file locali esclusi verificata; quattro runtime sostituiti ancora da committare sul HEAD e022b4d2dcb7dc2c15f502b240608aa2293934d4; proposta finale del manuale v1.2 e relativo Check. Prossimo nodo: review del Check e, solo dopo consenso, Apply/Verify accorpati del manuale. Poi checkpoint AIOS e profilo documentale della seconda repo.
 
 Leggere questo file e il checkpoint; accedere all'archivio precedente quando servono prove o sorgenti. Non assumere di poter leggere percorsi C: da ChatGPT. La nuova sessione inizia in lettura sullo stato Windows necessario e sul delta del nodo corrente; non riapre P1/P2 se il codice e i comportamenti già qualificati restano invariati. Non avvia subito Apply, installer, commit, cleanup o LOGOS.
 
-Documenti attivi: questo piano; checkpoint; contratto della release v0.3; AGENTS e undici fonti AIOS acquisite; review del primo ciclo e della readiness. Le fonti LOGOS/template caricate altrove non sono fonti sostitutive AIOS.
+Documenti attivi: questo piano; checkpoint del nodo; contratto e AGENTS locali aggiornati; fonti AIOS locali; receipt VERIFIED del rilascio corrente indicata in 3.1 e relative review. Le review del primo ciclo e della readiness restano storiche. Le fonti LOGOS/template caricate altrove non sono fonti sostitutive AIOS.
 
 Anchor di ripartenza:
 
@@ -364,8 +379,13 @@ La tabella seguente conserva il registro del 5 ottobre. Per lo stato successivo 
 | 6–9 ottobre: P1/P2 | Review concluse nel proprio scope | 25/25 e 21/21 PASS nativi isolati; non qualificano automaticamente altre repo |
 | 7–9 ottobre: cinque tracciati P3 | Apply, Verify e review chiuse | Kernel, Backup/GitHub, Runtime, Instructions, Index |
 | 9 ottobre: Run Instructions e Index | Accorpamento qualificato per le due azioni | Apply singola + gate + Verify in processo distinto + raccolta, 79 secondi riferiti ciascuno |
-| 9 ottobre: tre non tracciati P3 | Proposta coordinata preparata | Contratto, AGENTS e manuale; piano locale e provisioning ancora da eseguire |
-| P4/P5/P6, stato al 9 ottobre | Aperti | Classificazione/commit selettivo e nuovo HEAD; altra repo documentale; chiusura misurata |
+| 9 ottobre: tre non tracciati P3 | Provisioning V04 e Verify indipendente PASS | Tre REPLACE; prove e backup conservati; poi commit selettivo |
+| 9 ottobre: commit selettivo | PASS locale, 22 file | 5fdc73a98f5a83d031aa3fa3ede5f74dc9276306; push manuale riferito dall'utente |
+| 9–10 ottobre: guard | Nove casi riutilizzati; sei casi release PASS | Tre runtime installati, Verify e attivazione PASS; receipt 3080846e9f8f127dae2a4d79ad483fd9498b2e84827b5d04d7a9b0df9f223a03 |
+| 10 ottobre: precontrollo P4 | PASS in sola lettura | HEAD e origin/main locali e022b4d2dcb7dc2c15f502b240608aa2293934d4; pulita, nessuno staged; manuale 42.148 byte |
+| 10 ottobre: compatibilità file esclusi | Qualificazione 10/10, release quattro runtime e Verify PASS; setup 6/6 riutilizzato | Receipt corrente 4d2ae82ddc1402187a858c96e442227e328d21aea4c465aee27f2abd92e5418e |
+| 10 ottobre: Check manuale precedente | Check/raccolta PASS, 46 secondi, zero scritture | Report 57dc046d9f3493d8d8b4b2d2e7d7109d6911c436d0535148a6734ca0a955dfcc; proposta precedente, nessun Apply |
+| P4/P5/P6, stato al 10 ottobre | P4 in chiusura documentale; P5/P6 aperti | Check del diff aggiornato, consenso, Apply/gate/Verify/raccolta; commit/push manuali; profilo seconda repo e primo uso utile |
 
 ## 18. CQD, fonti e version history
 
@@ -373,9 +393,11 @@ Fonti primarie interne storiche del 5 ottobre: protocollo STP v1.0, CQD v1.2, Se
 
 Fonti tecniche: runtime/contract release v0.3; materiali E01–E09; review del primo ciclo e della readiness; richieste utente del 5 ottobre. Le prove supportano risultati osservati, il codice supporta i limiti, le richieste utente supportano lo scope; nessuna di queste categorie viene usata al posto delle altre.
 
-CQD: header, indice, sezioni, rimandi e history presenti; separazione fra attuale/progettato/futuro; elenco degli sviluppi e delle evidenze; nessuna modifica della preimage del documento ufficiale precedente. La v1.0 era un nuovo documento completo; la v1.1 è un aggiornamento puntuale della preimage locale acquisita. Metriche calcolate prima dell'esportazione e confrontate con i byte nello ZIP, in `CQD_REPORT.json`, senza autoreferenza del proprio hash nel corpo. Pipeline locale di preparazione verificata; l'integrazione nella root e la review della futura Apply restano distinte.
+CQD: header, indice, sezioni, rimandi e history presenti; stato acquisito, proposto e futuro separati. La v1.2 aggiorna tre range della v1.1 locale tracciata; conserva storico, evidenze del primo ciclo e byte esterni ai range. La v1.1 è stata provisionata e committata. La preparazione della v1.2 non attesta la sua Apply né il PASS del nuovo Check. Metriche calcolate prima dell'esportazione e confrontate con i byte nello ZIP, in `CQD_REPORT.json`, senza autoreferenza del proprio hash nel corpo. Pipeline locale di preparazione verificata; l'integrazione nella root e la review della futura Apply restano distinte.
 
 Version history:
+
+- v1.2 — 2026-10-10 — Proposta finale P4: provisioning P3 e commit registrati; release guard e compatibilità file esclusi verificate; receipt corrente e Check precedente referenziati; nuovo HEAD, flusso accorpato, deroga di lettura puntuale, commit/push manuali. Questa postimage aggiornata conserva storico e byte esterni ai tre range; il proprio Check e Apply restano da attestare.
 
 - v1.1 — 2026-10-09 — Proposta di allineamento P3: cinque tracciati chiusi, accorpamento nel proprio scope, letture locali e log, pacchetti senza annidamento, tre REPLACE di provisioning, residuo P4/P5/P6. Storico e prove del primo ciclo conservati. Nessuna installazione della proposta attestata dalla sua preparazione.
 

@@ -61,6 +61,12 @@ function Assert-AIOSPinnedEvidence {
     Assert-AIOSExistingFile $Path
     if ((Get-AIOSHash ([IO.File]::ReadAllBytes($Path))) -cne $Hash) { throw 'STOP: pinned approval/evidence changed.' }
 }
+function Assert-AIOSIgnoredPaths {
+    param([object]$Context)
+    foreach ($row in (Read-AIOSGit $Context.Root @('status', '--porcelain=v1', '--untracked-files=all', '--ignored=matching'))) {
+        if (([string]$row).StartsWith('!! ', [StringComparison]::Ordinal)) { throw 'STOP: foreign ignored paths in transaction fixture.' }
+    }
+}
 function Assert-AIOSTransactionState {
     param([object]$Context, [bool[]]$Applied)
     Assert-AIOSTransactionBindings $Context
@@ -82,9 +88,7 @@ function Assert-AIOSTransactionState {
         }
     }
     Assert-AIOSStatus $Context.Root $expected $appliedPaths
-    foreach ($row in (Read-AIOSGit $Context.Root @('status', '--porcelain=v1', '--untracked-files=all', '--ignored=matching'))) {
-        if (([string]$row).StartsWith('!! ', [StringComparison]::Ordinal)) { throw 'STOP: foreign ignored paths in transaction fixture.' }
-    }
+    Assert-AIOSIgnoredPaths $Context
     Assert-AIOSSourceGuard $Context $appliedPaths
     Assert-AIOSRemote $Context
 }

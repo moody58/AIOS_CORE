@@ -3,6 +3,7 @@
 Set-StrictMode -Version 2.0
 $script:AIOSProductionAdapterPath=$PSCommandPath
 $script:AIOSOriginalStatus=${function:Assert-AIOSStatus}
+$script:AIOSOriginalIgnoredPaths=${function:Assert-AIOSIgnoredPaths}
 $script:AIOSBaseline=$null
 $script:AIOSBaselineTarget=$null
 $script:AIOSBaselinePath='';$script:AIOSBaselineHash=''
@@ -413,4 +414,82 @@ function Assert-AIOSApprovedBridgeLease {
     if($v.request_id -cne $l.request_id){throw 'STOP: reserved bridge request mismatch.'}
     $claim=Read-AIOSApprovalPinnedJson $l.reservation_path $l.reservation_sha256
     if($claim.state -cne 'RESERVED' -or $claim.request_sha256 -cne $l.request_sha256 -or $claim.decision_sha256 -cne $l.decision_sha256 -or $claim.action.ToUpperInvariant() -cne $Action){throw 'STOP: bridge reservation mismatch.'}
+}
+
+# Exact local exclusions are action-bound observations, never a broad ignore bypass.
+function Assert-AIOSBoundLocalIgnoreState {
+    param([object]$Context,[object]$Baseline,[string]$BaselinePath)
+    $allowed=@('.codex/config.toml','.vscode/tasks.json')
+    $ignored=Read-AIOSGit $Context.Root @('ls-files','--others','--ignored','--exclude-standard')
+    foreach($relative in $ignored){
+        if($allowed -cnotcontains [string]$relative){throw ('STOP: foreign ignored path: '+$relative)}
+    }
+    if($ignored.Count -ne 2 -or $ignored[0] -ceq $ignored[1]){throw 'STOP: exact two local ignored paths required.'}
+    if($null -eq $Baseline -or $Baseline.source_capture_sha256 -cnotmatch '^[0-9a-f]{64}$'){
+        throw 'STOP: ignored paths require an action-bound source capture.'
+    }
+    $capturePath=Join-Path ([IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($BaselinePath))) 'SOURCE_SNAPSHOT.json'
+    if($capturePath.StartsWith($Context.Root+'\',[StringComparison]::OrdinalIgnoreCase)){
+        throw 'STOP: ignored-path capture must be external.'
+    }
+    Assert-AIOSPinnedEvidence $capturePath $Baseline.source_capture_sha256
+    $capture=Read-AIOSCanonicalJson $capturePath
+    if($capture.format -cne 'AIOS-P4-FRESH-SNAPSHOT/1.0' -or
+        $capture.baseline_adopted -isnot [bool] -or $capture.baseline_adopted -or
+        $capture.repository_written -isnot [bool] -or $capture.repository_written){
+        throw 'STOP: ignored-path capture format/scope mismatch.'
+    }
+    $snap=$capture.snapshot
+    # rev-parse may return forward slashes; the acquisition normalizes them.
+    $indexPath=[IO.Path]::GetFullPath($Context.IndexPath)
+    if($snap.root -cne $Context.Root -or $Baseline.root -cne $Context.Root -or
+        $snap.head -cne $Baseline.head -or $snap.head -cne $Context.Handoff.repository.expected_head -or
+        $snap.branch -cne $Baseline.branch -or $snap.index_path -cne $indexPath -or
+        $snap.index_sha256 -cne $Baseline.index_sha256 -or $snap.index_sha256 -cne $Context.IndexHash -or
+        (Read-AIOSGitOne $Context.Root @('rev-parse','HEAD')) -cne $snap.head -or
+        (Read-AIOSGitOne $Context.Root @('symbolic-ref','--short','HEAD')) -cne $snap.branch){
+        throw 'STOP: ignored-path snapshot identity mismatch.'
+    }
+    Assert-AIOSExistingFile $indexPath
+    if((Get-AIOSHash ([IO.File]::ReadAllBytes($indexPath))) -cne $snap.index_sha256){
+        throw 'STOP: ignored-path index changed.'
+    }
+    foreach($relative in $allowed){
+        $matches=@($snap.root_files | Where-Object {$_.relative_path -ceq $relative})
+        if($matches.Count -ne 1){throw ('STOP: ignored-path capture record mismatch: '+$relative)}
+        $path=Join-Path $Context.Root ($relative.Replace('/','\'))
+        Assert-AIOSBoundLocalFile $path $matches[0].state
+    }
+    $exclude=(Read-AIOSGitOne $Context.Root @('rev-parse','--path-format=absolute','--git-path','info/exclude')).Replace('/','\')
+    $records=@($snap.protected | Where-Object {$_.path -ceq $exclude})
+    if($records.Count -ne 1){throw 'STOP: info/exclude capture record mismatch.'}
+    Assert-AIOSBoundLocalFile $exclude $records[0]
+    Assert-AIOSPinnedEvidence $capturePath $Baseline.source_capture_sha256
+}
+function Assert-AIOSBoundLocalFile {
+    param([string]$Path,[object]$State)
+    if($State.path -cne $Path -or $State.present -isnot [bool] -or -not $State.present -or
+        ($State.bytes -isnot [long] -and $State.bytes -isnot [int]) -or $State.bytes -lt 0 -or
+        $State.sha256 -cnotmatch '^[0-9a-f]{64}$'){
+        throw ('STOP: local ignored-file state mismatch: '+$Path)
+    }
+    Assert-AIOSExistingFile $Path
+    $bytes=[IO.File]::ReadAllBytes($Path)
+    if($bytes.Length -ne $State.bytes -or (Get-AIOSHash $bytes) -cne $State.sha256){
+        throw ('STOP: local ignored-file bytes changed: '+$Path)
+    }
+}
+function Assert-AIOSIgnoredPaths {
+    param([object]$Context)
+    if($script:AIOSExecutionScope -cne 'AIOSCoreDocument' -or $Context.Root -cne 'C:\AIOS_GITHUB\AIOS_CORE'){
+        & $script:AIOSOriginalIgnoredPaths $Context
+        return
+    }
+    if($null -eq $script:AIOSReleaseActivation){throw 'STOP: verified release setup required for local exclusions.'}
+    $ignored=Read-AIOSGit $Context.Root @('ls-files','--others','--ignored','--exclude-standard')
+    if($ignored.Count -eq 0){
+        & $script:AIOSOriginalIgnoredPaths $Context
+        return
+    }
+    Assert-AIOSBoundLocalIgnoreState $Context $script:AIOSBaseline $script:AIOSBaselinePath
 }
