@@ -1,11 +1,11 @@
 # AIOS — Sistema tipografico
 
 **Documento:** `00_AIOS_Typography_System`  
-**Versione:** v1.2 · 15 ottobre 2026  
+**Versione:** v1.3 · 15 ottobre 2026  
 **Sistema:** AIOS / Brand System  
 **Destinazione approvata:** `00_SYSTEM/BRAND_IDENTITY/00_AIOS_Typography_System.md`  
-**Stato revisione v1.2:** contenuto predisposto per applicazione manuale; non ancora applicato o pubblicato.  
-**Provenienza immediata:** `03_AIOS_Typography_System_v1.1(1).md` (allegato alla micro-sessione AIOS).  
+**Stato documentale:** sistema tipografico approvato e presente nel repository AIOS_CORE. La pubblicazione delle singole revisioni richiede verifica dei relativi commit e controlli CQD.  
+**Preimage della revisione:** v1.2 pubblicata al commit `831c11ca4dd637b040a921f55b98acf09495c23b` e invariata nel commit `d3aaf9814959839e0fa24b749a57f5a8b99adb9e`. Fonte storica della prima integrazione: `03_AIOS_Typography_System_v1.1(1).md` (allegato).  
 **Stato:** consolidato sul piano tipografico; nuova identità grafica integrata senza cambiare le famiglie approvate.  
 **Ambito:** documentazione di regia del metasistema AIOS, sito web, app, dashboard, documenti e asset di comunicazione.  
 **Fonte integrale di base:** `03_AIOS_Typography_System_v1.0(1).pdf` (5 pagine, 08.10.2026).
@@ -150,8 +150,9 @@ Percorsi, nomi dei file e disponibilità dei pesi sono esempi: sostituire con fi
 - **Decisioni immutate:** Geist Sans per il testo proporzionale, IBM Plex Mono per i contenuti monospaziati e wordmark grafico proprietario. Le tabelle, le scale e il CSS indicativo delle sezioni 01–04 rimangono quelli della v1.1.
 - **Asset:** `assets/AIOS-logo-official.png` disponibile in copia byte-identica; master inverso per superfici dark non incluso e da validare separatamente.
 - **Provenienza:** versione integrale immediata `03_AIOS_Typography_System_v1.1(1).md` ricevuta nella sessione. Il riferimento al PDF v1.0 descrive la provenienza riportata dal documento precedente, non una nuova lettura di quel PDF in questa preparazione.
-- **Gate documentale:** revisione candidata fino all'applicazione manuale, ai controlli CQD locali e a commit/push verificati separatamente.
+- **Tracciabilità Git:** la v1.2 è stata pubblicata al commit `831c11ca4dd637b040a921f55b98acf09495c23b` e risulta invariata nel commit `d3aaf9814959839e0fa24b749a57f5a8b99adb9e`. Ogni revisione successiva richiede controlli della working copy e verifica separata del commit e del push; non è attestato un master inverso.
 
 ### Version history — integrazione
 
+- **v1.3, 15.10.2026:** rettifica dei metadati di stato, provenienza e tracciabilità Git dopo la prima pubblicazione; Geist Sans, IBM Plex Mono, gerarchie, licenze dichiarate e CSS invariati. Preimage: commit `d3aaf9814959839e0fa24b749a57f5a8b99adb9e`.
 - **v1.2, 15.10.2026:** collocazione e riferimenti aggiornati per i PNG e il Markdown canonico; font, gerarchie, licenze dichiarate, CSS e vincoli conservati.

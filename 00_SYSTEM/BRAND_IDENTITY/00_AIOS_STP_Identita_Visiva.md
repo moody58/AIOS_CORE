@@ -1,10 +1,10 @@
 # AIOS — STP a tre livelli · Nuova identità visiva
 
 **Documento:** `00_AIOS_STP_Identita_Visiva`  
-**Versione:** v1.1 · 15 ottobre 2026  
+**Versione:** v1.2 · 15 ottobre 2026  
 **Destinazione approvata:** `00_SYSTEM/BRAND_IDENTITY/00_AIOS_STP_Identita_Visiva.md`  
-**Stato revisione v1.1:** contenuto predisposto per applicazione manuale; non ancora applicato o pubblicato.  
-**Provenienza immediata:** `03_AIOS_STP_Identita_Visiva_v1.0(1).md` (allegato alla micro-sessione AIOS).  
+**Stato documentale:** STP della decisione grafica approvato con condizioni applicative; documento canonico presente in `AIOS_CORE`. La pubblicazione delle revisioni si verifica mediante i rispettivi commit e controlli CQD.  
+**Preimage della revisione:** v1.1 pubblicata al commit `831c11ca4dd637b040a921f55b98acf09495c23b` e invariata nel commit `d3aaf9814959839e0fa24b749a57f5a8b99adb9e`. Fonte storica originale: `03_AIOS_STP_Identita_Visiva_v1.0(1).md` (allegato).  
 **Protocollo vigente consultato:** `../../02_PROTOCOLS/02_AIOS_STP_Protocol.md` (v1.0 al commit di boot).  
 **Oggetto:** sostituzione del simbolo primario storico con il triangolo satinato, mantenimento del wordmark piatto e della palette/gerarchia tipografica già approvate.  
 **Fonti:** `03_AIOS_Visual_Identity_v1.0(1).pdf`, `03_AIOS_Typography_System_v1.0(1).pdf`; tavola della variante satinata approvata in conversazione.
@@ -79,12 +79,13 @@ Consolidare il nuovo simbolo satinato **senza ulteriori modifiche cromatiche e g
 ## Integrazione documentale v1.1 — 15 ottobre 2026
 
 - **Perimetro:** collocazione dello STP storico nella nuova area `00_SYSTEM/BRAND_IDENTITY/`, senza ripetere o mutare i tre livelli e il loro esito.
-- **Documenti collegati:** `00_AIOS_Visual_Identity.md` e `00_AIOS_Typography_System.md` (in questa stessa directory, da creare manualmente).
+- **Documenti collegati:** `00_AIOS_Visual_Identity.md` e `00_AIOS_Typography_System.md` (presenti nella stessa directory della repository).
 - **Asset di riferimento disponibili:** `assets/AIOS-logo-official.png`, `assets/AIOS-symbol-official.png`, `assets/AIOS-logo-print.png`; la variante print rimane un riferimento visivo raster, non un esecutivo prestampa certificato. Variante inversa e test microtaglie rimangono da validare.
 - **Provenienza:** testo integrale di `03_AIOS_STP_Identita_Visiva_v1.0(1).md` ricevuto in questa sessione. I riferimenti ai PDF v1.0 e alla tavola grafica nella sezione originale sono storia del documento: gli originali non sono stati acquisiti integralmente durante questo passaggio.
-- **Gate documentale:** v1.1 candidata; nessuna Apply, scrittura repository, validazione di produzione o pubblicazione attestata.
+- **Tracciabilità Git:** documento v1.1 e asset grafici pubblicati nel commit `831c11ca4dd637b040a921f55b98acf09495c23b`, invariati nel commit `d3aaf9814959839e0fa24b749a57f5a8b99adb9e`. Le revisioni successive richiedono verifica dei byte locali, CQD e riscontro distinto del commit/push. Nessun master di stampa certificato, master inverso o test fisico è attestato.
 
 ### Version history
 
+- **v1.2, 15.10.2026:** rettifica dei metadati di stato, dei rimandi ai documenti ora esistenti e della provenienza Git; decisione STP e prescrizioni della v1.0 immutate. Preimage: commit `d3aaf9814959839e0fa24b749a57f5a8b99adb9e`.
 - **v1.1, 15.10.2026:** collocazione approvata, filename e percorsi di riferimento aggiornati, nota di provenienza; decisione STP e prescrizioni di v1.0 preservate.
 - **v1.0, 08.10.2026:** STP originale a tre livelli che approva il simbolo satinato con condizioni applicative.
