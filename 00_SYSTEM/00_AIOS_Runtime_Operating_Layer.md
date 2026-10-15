@@ -1,6 +1,6 @@
 # Documento: 00_AIOS_Runtime_Operating_Layer
 
-Versione: v1.6 Sistema: AIOS Tipo: Runtime operativo del sistema Anno:
+Versione: v1.7 Sistema: AIOS Tipo: Runtime operativo del sistema Anno:
 2026
 
 ------------------------------------------------------------------------
@@ -106,8 +106,9 @@ Per Codex locale si applica inoltre
 `02_PROTOCOLS/02_AIOS_Codex_Safe_Document_Apply.md`: il suo caricamento
 non abilita scritture né estende lo scope dell'esecutore installato.
 
-Se uno o più documenti non sono presenti nella sessione AIOS può
-richiederne il caricamento.
+Se una fonte necessaria non e' nella sessione, tentare prima il recupero
+secondo 02_PROTOCOLS/02_AIOS_Sistema_Fonti.md; chiedere soltanto il materiale
+ancora mancante. La working copy completa resta obbligatoria per le scritture.
 
 ------------------------------------------------------------------------
 
@@ -309,6 +310,11 @@ al PC da parte della review esterna.
 ------------------------------------------------------------------------
 
 # VERSION HISTORY
+
+v1.7 — 2026-10-15 — Provenienza e acquisizione da fonti accessibili;
+nuovo boot esplicito per nuove versioni, nuova chat solo per contesto/nodo
+o saturazione. Gli stati Codex datati restano snapshot storici; non
+riaprono P4 o sostituiscono le evidenze del ciclo effettivamente concluso.
 
 v1.6 — 2026-10-08 — Stato corrente P1/P2 e cicli Kernel/Backup P3;
 procedura GUI con contenuti locali, launcher -File e prove mirate.

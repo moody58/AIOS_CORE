@@ -1,6 +1,6 @@
 # Documento: 00_AIOS_Session_Protocol
 
-Versione: v1.2 Sistema: AIOS Tipo: Protocollo operativo di sessione
+Versione: v1.3 Sistema: AIOS Tipo: Protocollo operativo di sessione
 Anno: 2026
 
 ------------------------------------------------------------------------
@@ -65,12 +65,11 @@ oppure\
 
 # 5 --- RECUPERO DELLO STATO
 
-Poiché le chat non possono interrogare altre conversazioni, lo stato del
-progetto può essere ricostruito tramite:
-
--   memoria conversazionale
--   blocco STATE dichiarato
--   Regia del progetto
+Lo stato viene ricostruito dalle fonti effettivamente accessibili secondo
+02_PROTOCOLS/02_AIOS_Sistema_Fonti.md, dai documenti canonici allo SHA del
+boot e dal checkpoint pertinente. Memoria e conversazioni precedenti, se
+recuperabili tramite capacita' disponibili, sono supporti con provenienza
+dichiarata: non e' presunta ne' la loro assenza ne' la loro lettura completa.
 
 La Regia rappresenta la fonte direzionale principale dello stato del
 progetto.
@@ -186,3 +185,10 @@ Metriche POST saranno calcolate dopo generazione.
 
 Metriche POST: Paragraphs: 69 Characters: 3402 Words: 421 Hash:
 e4d83c20afcd25a0495b975b4539edb230fb6169ed4e1ca59708d92046d07680
+
+# VERSION HISTORY
+
+v1.3 — 2026-10-15 — Fonti tramite integrazioni, memoria come supporto e
+checkpoint pertinenti. Per nuove versioni dichiarare un nuovo boot/SHA;
+nuova chat se cambia nodo o il contesto e' insufficiente/saturo.
+Il CQD report datato sopra e' storico, non la misura di questa revisione.

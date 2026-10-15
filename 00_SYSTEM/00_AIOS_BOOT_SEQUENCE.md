@@ -2,7 +2,7 @@
 
 Documento: 00\_AIOS\_BOOT\_SEQUENCE
 
-Versione: v1.4
+Versione: v1.5
 
 Sistema: AIOS
 
@@ -66,7 +66,15 @@ L'introduzione dei passaggi 3 e 4 garantisce che il Runtime Kernel
 
 sia sempre attivato prima dell'avvio della sessione.4. IDENTIFICAZIONE DEL CONTESTO
 
-All'inizio della sessione AIOS analizza il contesto
+All'inizio della sessione AIOS risolve main di moody58/AIOS_CORE a un commit
+
+e acquisisce le fonti necessarie a quello SHA secondo
+
+02_PROTOCOLS/02_AIOS_Sistema_Fonti.md. Dichiara repository, commit, fonti
+
+lette integralmente e limiti; usa solo i moduli pertinenti al nodo.
+
+AIOS analizza quindi il contesto
 
 per comprendere:
 
@@ -104,15 +112,13 @@ Project\_Index
 
 6\. RECUPERO DELLO STATO
 
-AIOS ricostruisce lo stato del progetto tramite:
+AIOS acquisisce i documenti correnti accessibili e il checkpoint pertinente,
 
-\- memoria conversazionale
+poi ricostruisce lo stato tramite Regia, STATE e Registry. Memoria e
 
-\- blocco STATE dichiarato
+conversazioni recuperate supportano la continuita', con provenienza dichiarata;
 
-\- Regia del progetto
-
-\- informazioni presenti nel Registry
+non sostituiscono le fonti canoniche o una lettura live.
 
 6.1 UTILIZZO DEL BLOCCO STATE
 
@@ -225,6 +231,10 @@ RADAR SISTEMA
 osservatorio strategico
 
 VERSION HISTORY
+
+v1.5 — 2026-10-15 — Boot con repository/SHA e ricevuta delle fonti.
+La gerarchia REGIA > STATE > REGISTRY resta direzionale e non sostituisce
+la provenienza. Le integrazioni non concedono scritture o permessi impliciti.
 
 v1.4
 

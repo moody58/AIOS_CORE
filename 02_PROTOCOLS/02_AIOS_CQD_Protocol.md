@@ -2,7 +2,7 @@
 
 Documento: 02_AIOS_CQD_Protocol
 
-Versione: v1.2
+Versione: v1.3
 
 Progetto: AIOS
 
@@ -166,7 +166,11 @@ della versione precedente.
 
 Se il contenuto precedente non è disponibile
 
-deve essere richiesto il caricamento del documento originale.
+si tenta prima l'acquisizione completa secondo
+
+02_PROTOCOLS/02_AIOS_Sistema_Fonti.md; si richiede solo il materiale ancora
+
+mancante. Per una scrittura vale la preimage locale completa, anche dirty.
 
 È vietata la generazione di versioni parziali
 
@@ -305,3 +309,7 @@ Nota di provisioning R1 (2026-10-03): i riferimenti al candidato e ai gate
 aperti riportano lo snapshot precedente. Lo stato locale richiede la ricevuta
 Verify PASS; la transizione e definita nella sezione 12 del contratto Codex.
 Production_ready=false; R2.1 reale sospeso dopo il setup; commit/push separati.
+
+v1.3 — 2026-10-15: acquisizione integrale dalle fonti accessibili prima
+dell'upload. Pipeline, metriche pregresse e altri contenuti preservati;
+nessun nuovo export o test nativo e' attestato da questa revisione.

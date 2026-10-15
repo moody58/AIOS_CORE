@@ -1,6 +1,6 @@
 # Documento: 00_AIOS_KERNEL_MANIFEST
 
-Versione: v1.3\
+Versione: v1.4\
 Sistema: AIOS\
 Tipo: Kernel Manifest\
 Anno: 2026
@@ -84,9 +84,12 @@ Runtime di:
 -   individuare i protocolli disponibili
 -   attivare correttamente il metodo operativo
 
-Se uno o più documenti del Kernel non sono disponibili nella sessione,
-AIOS può richiederne il caricamento per garantire la coerenza
-architetturale del sistema.
+Per acquisizione, copie, allegati, checkpoint e provenienza applicare
+02_PROTOCOLS/02_AIOS_Sistema_Fonti.md. Recuperare prima le fonti accessibili;
+se manca ancora un documento necessario, sospendere l'operativita' dipendente
+e richiedere soltanto quel materiale. Il bootstrap canonico e' in
+00_SYSTEM/00_AIOS_BOOT_SEQUENCE.md; il blocco da copiare nella tab e'
+BOOTSTRAP TAB CHATGPT in 00_SYSTEM/AIOS_PROJECT_INSTRUCTIONS_RUNTIME.md.
 
 ------------------------------------------------------------------------
 
@@ -127,6 +130,9 @@ Il piano in 05_WORKSPACE resta un punto d’ingresso del nodo, non una nuova
 dipendenza obbligatoria del Kernel.
 
 # VERSION HISTORY
+
+v1.4 — 2026-10-15 — Acquisizione fonti e bootstrap tab con rimando al Sistema Fonti.
+Elenco Kernel invariato; stato P3 sotto il titolo datato resta storico.
 
 v1.3 — 2026-10-07 — Stato corrente Codex P1/P2 e acquisizione P3;
 elenco Kernel invariato, note R1 conservate come storia.

@@ -1,6 +1,6 @@
 Documento: 01_AIOS_State_Protocol
 
-Versione: v1.1
+Versione: v1.2
 
 Sistema: AIOS
 
@@ -17,11 +17,13 @@ Il State Protocol definisce il metodo con cui il sistema AIOS
 ricostruisce e gestisce lo stato dei progetti durante le sessioni
 operative.
 
-Poiché le conversazioni non possono interrogare direttamente
+Il protocollo STATE ricostruisce il contesto usando le fonti davvero
 
-altre chat o documenti esterni, il protocollo STATE permette
+accessibili. Integrazioni e recupero di conversazioni, quando disponibili,
 
-di ricostruire rapidamente il contesto operativo del progetto.
+non eliminano l'obbligo di provenienza e confronto delle fonti secondo
+
+02_PROTOCOLS/02_AIOS_Sistema_Fonti.md.
 
 2\. COSA RAPPRESENTA LO STATE
 
@@ -69,19 +71,13 @@ eventuali informazioni utili
 
 4\. FONTI DI RICOSTRUZIONE DELLO STATO
 
-AIOS può ricostruire lo stato di un progetto tramite tre fonti:
+AIOS acquisisce Regia, documenti di stato e Registry dalle fonti canoniche
 
-\- memoria conversazionale
+allo SHA del boot; integra lo STATE dichiarato e il checkpoint pertinente
 
-\- blocco STATE dichiarato nella sessione
+con provenienza esplicita. La memoria conversazionale puo' aiutare ma non
 
-\- Regia del progetto
-
-Queste fonti consentono di ricostruire il contesto
-
-anche quando le chat non possono accedere direttamente
-
-ai documenti del sistema.
+certifica applicazioni, contenuti di file non letti o stato live.
 
 5\. GERARCHIA DELLE FONTI DI STATO
 
@@ -160,6 +156,9 @@ ma può essere utilizzato per verificare
 la coerenza dello stato del progetto.
 
 VERSION HISTORY
+
+v1.2 — 2026-10-15 — Provenienza e accesso alle fonti; nessun limite di
+accesso o lettura delle altre chat e' presunto senza verifica delle capacita'.
 
 v1.1
 

@@ -1,6 +1,6 @@
 Documento: 01_AIOS_Method
 
-Versione: v1.5
+Versione: v1.6
 
 Sistema: AIOS
 
@@ -326,7 +326,11 @@ della versione precedente.
 
 Se il contenuto precedente non è disponibile
 
-il sistema richiede il caricamento del documento originale.
+si tenta prima l'acquisizione completa secondo
+
+02_PROTOCOLS/02_AIOS_Sistema_Fonti.md; si richiede solo il materiale ancora
+
+mancante. Per una scrittura vale la preimage locale completa, anche dirty.
 
 Non è consentita la generazione di versioni parziali
 
@@ -399,3 +403,7 @@ corrente.
 I trigger rappresentano strumenti operativi dell\'interfaccia
 conversazionale del sistema AIOS. Il loro comportamento operativo è
 definito nei protocolli specifici del sistema.
+
+v1.6 — 2026-10-15: acquisizione integrale dalle fonti accessibili prima
+dell'upload. Pipeline, metriche pregresse e altri contenuti preservati;
+nessun nuovo export o test nativo e' attestato da questa revisione.
