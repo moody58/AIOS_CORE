@@ -1,18 +1,18 @@
 # AIOS — Sistema grafico
 
 **Documento:** `00_AIOS_Visual_Identity`  
-**Versione:** v1.2 · 15 ottobre 2026  
+**Versione:** v1.3 · 15 ottobre 2026  
 **Sistema:** AIOS / Brand System  
 **Destinazione approvata:** `00_SYSTEM/BRAND_IDENTITY/00_AIOS_Visual_Identity.md`  
-**Stato revisione v1.2:** contenuto predisposto per applicazione manuale; non ancora applicato o pubblicato.  
-**Provenienza immediata:** `03_AIOS_Visual_Identity_v1.1(1).md` (allegato alla micro-sessione AIOS).  
+**Stato revisione v1.3:** contenuto predisposto per applicazione manuale; non ancora applicato o pubblicato.  
+**Provenienza immediata:** `03_AIOS_Visual_Identity_v1.2(1).md` (allegato alla micro-sessione AIOS).  
 **Stato:** nuovo simbolo satinato adottato; vincoli produttivi ancora da verificare dove indicato.  
 **Ambito:** documentazione della Control Room AIOS, sito web, app, dashboard, documenti e asset di comunicazione.  
 **Fonte integrale di base:** `03_AIOS_Visual_Identity_v1.0(1).pdf` (6 pagine, 08.10.2026).
 
 ![Firma primaria AIOS aggiornata: simbolo satinato e wordmark proprietario](assets/AIOS-logo-official.png)
 
-## Decisioni consolidate — aggiornamento v1.1
+## Decisioni consolidate — aggiornamento v1.2
 
 - **Simbolo primario:** nuovo nastro triangolare intrecciato **satinato** (forme e rendering approvati dall'utente dopo iterazioni); sostituisce il precedente simbolo quadrato.
 - **Wordmark AIOS:** disegno geometrico personalizzato **invariato**. Non va ricostruito usando un font.
@@ -52,7 +52,7 @@ La scelta estetica è consolidata. Il PNG allegato è un **riferimento raster**,
 
 ### Utilizzo su sfondo scuro
 
-**Asset inverso non incluso:** la precedente v1.1 richiamava `assets/AIOS_Dark_Wordmark_Anteprima_NonMaster.png`, non fornito tra i tre PNG approvati per questa collocazione. Non è presente un master inverso validato.
+**Asset inverso non incluso:** la precedente v1.2 richiamava `assets/AIOS_Dark_Wordmark_Anteprima_NonMaster.png`, non fornito tra i tre PNG approvati per questa collocazione. Non è presente un master inverso validato.
 
 Il simbolo mantiene il proprio rendering; **solo il lettering** può passare a una tinta chiara approvata (es. Mist White `#F3F5F8`) senza cambiarne geometria, rapporto o peso. La variante inversa resta una **soluzione funzionale da validare separatamente**, non una modifica approvata del wordmark proprietario. Evitare la versione con lettere Ink Graphite / blu scuro su sfondo simile per scarsa leggibilità.
 
@@ -88,7 +88,7 @@ I valori HEX / RGB sono riferimenti **digitali sRGB**. Le conversioni CMYK ripor
 
 \* Formula RGB → CMYK generica senza profilo ICC: per stampa servono prova colore, intento di rendering, carta e impianto.
 
-**Nota v1.1:** le tonalità locali nel rendering del simbolo satinato non diventano nuovi token cromatici globali. In assenza di un file sorgente di rendering con valori e gradient stop verificati, **non attribuire codici HEX ufficiali alle singole luci e ombre del simbolo**.
+**Nota v1.2:** le tonalità locali nel rendering del simbolo satinato non diventano nuovi token cromatici globali. In assenza di un file sorgente di rendering con valori e gradient stop verificati, **non attribuire codici HEX ufficiali alle singole luci e ombre del simbolo**.
 
 ## 03 / Accenti e semantica per web/app (INVARIATI)
 
@@ -145,7 +145,7 @@ Riferimento: **WCAG 2.2 livello AA**, criteri 1.4.3 (testo), 1.4.11 (elementi UI
 - **Stampa:** convertire solo attraverso profilo ICC della tipografia, es. processo FOGRA/ISO coerente con supporto e stampatore.
 - **Nastro sfumato:** prova a dimensione reale, evitando posterizzazione e perdita di luminosità nella conversione CMYK.
 - **Taglio vinile / timbri / segnaletica:** richiedere equivalente flat o monocromatico; non forzare le sfumature originali.
-- **Nuova verifica v1.1:** la preview della variante print non è un esecutivo tipografico; realizzare una sorgente di produzione fedele e testarne la resa.
+- **Nuova verifica v1.2:** la preview della variante print non è un esecutivo tipografico; realizzare una sorgente di produzione fedele e testarne la resa.
 
 ### Pantone / RAL: candidati fisici, NON equivalenze ufficiali
 
@@ -165,7 +165,7 @@ Le associazioni Pantone/RAL delle bozze precedenti **non** sono state confermate
 - Pantone: https://support.pantone.com/
 - RAL: https://ral-shop.nl/en/kleur/ral-5014
 
-## 06 / STP — decisione di identità v1.1
+## 06 / STP — decisione di identità v1.2
 
 **Esito:** APPROVATO con condizioni applicative. Il marchio satinato è mantenuto nella forma e nelle sue sfumature approvate; la differenza fra simbolo volumetrico e lettering piatto costituisce una gerarchia funzionale, non una contraddizione che richieda un redesign.
 
@@ -178,19 +178,19 @@ Per dettagli, condizioni e matrice dei rischi: `00_AIOS_STP_Identita_Visiva.md`.
 ## Tracciabilità / CQD
 
 - **v1.0, 08.10.2026:** logo quadrato iniziale, palette fondante e semantica, accessibilità e produzione.
-- **v1.1, 08.10.2026:** nuova firma satinata, conferma immutata di palette e wordmark, variante print da tavola scelta, condizioni STP e istruzioni di produzione/riduzione. Sezioni 02–05 e tabelle ufficiali **conservate integralmente nei loro contenuti decisionali**.
+- **v1.2, 08.10.2026:** nuova firma satinata, conferma immutata di palette e wordmark, variante print da tavola scelta, condizioni STP e istruzioni di produzione/riduzione. Sezioni 02–05 e tabelle ufficiali **conservate integralmente nei loro contenuti decisionali**.
 - Fonte originale consultata integralmente: PDF ufficiale v1.0 di 6 pagine. La Quick Guide sperimentale con palette alternativa `#041B4D`/`#2D4670`/`#1F6EFF`/`#8FB9FF`/`#E6F0FF` e font Sora/Inter/JetBrains è **obsoleta e non normativa**; quei token non entrano nel sistema AIOS.
 - L'asset grafico approvato è un **PNG raster con trasparenza**; non affermare disponibilità di file vettoriale nativo o font proprietario distribuibile se non fornito.
 
 
-## Integrazione documentale v1.2 — 15 ottobre 2026
+## Integrazione documentale v1.3 — 15 ottobre 2026
 
 - **Perimetro:** nuova collocazione documentale approvata sotto `00_SYSTEM/BRAND_IDENTITY/`, collegamenti agli asset PNG forniti e riferimento allo STP con filename stabile. Nessun redesign, nuova palette o modifica ai token, alle scale e alle regole storicamente approvate.
 - **Asset presenti:** `assets/AIOS-logo-official.png` (firma orizzontale); `assets/AIOS-symbol-official.png` (simbolo isolato); `assets/AIOS-logo-print.png` (riferimento grafico print, non master di prestampa). Copie byte-identiche degli allegati.
-- **Asset non presente:** `assets/AIOS_Dark_Wordmark_Anteprima_NonMaster.png` (riferimento della v1.1, non incluso). Nessun master inverso è attestato in questo pacchetto.
-- **Provenienza:** versione integrale immediata `03_AIOS_Visual_Identity_v1.1(1).md` consegnata in questa sessione. I riferimenti alla tavola grafica e al PDF v1.0 sono storico del testo sorgente: tali materiali non sono stati acquisiti integralmente per questa preparazione e non sono attestati da un nuovo controllo.
+- **Asset non presente:** `assets/AIOS_Dark_Wordmark_Anteprima_NonMaster.png` (riferimento della v1.2, non incluso). Nessun master inverso è attestato in questo pacchetto.
+- **Provenienza:** versione integrale immediata `03_AIOS_Visual_Identity_v1.2(1).md` consegnata in questa sessione. I riferimenti alla tavola grafica e al PDF v1.0 sono storico del testo sorgente: tali materiali non sono stati acquisiti integralmente per questa preparazione e non sono attestati da un nuovo controllo.
 - **Gate documentale:** questa revisione rimane candidata fino alla creazione manuale nel percorso approvato, al controllo CQD sui byte locali, alla review delle differenze e al commit/push manuale distintamente verificati.
 
 ### Version history — integrazione
 
-- **v1.2, 15.10.2026:** ricollocazione documentale proposta e approvata, rinomina stabile, associazione dei tre asset originali effettivamente forniti, rimozione del collegamento immagine inesistente per la variante dark, collegamenti interni aggiornati; decisioni grafiche invariate.
+- **v1.3, 15.10.2026:** ricollocazione documentale proposta e approvata, rinomina stabile, associazione dei tre asset originali effettivamente forniti, rimozione del collegamento immagine inesistente per la variante dark, collegamenti interni aggiornati; decisioni grafiche invariate.
