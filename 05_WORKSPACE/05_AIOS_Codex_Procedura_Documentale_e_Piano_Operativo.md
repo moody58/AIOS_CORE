@@ -1,13 +1,13 @@
 # 05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo
+Versione: v1.3
 
 Documento: procedura documentale ChatGPT / Codex in VS Code e piano operativo consolidato
-Versione: v1.2
 Data: 2026-10-10
 Sistema: AIOS — progetto AIOS_CORE
 Tipo: documento operativo di workspace, destinato alla repository
 Destinazione: `05_WORKSPACE/05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo.md`
-Stato del file: v1.1 locale tracciata e committata; proposta v1.2 subordinata a Check, review, consenso e Apply/Verify
-Stato della procedura: P3 chiuso nel proprio scope; compatibilità guard e file locali esclusi verificata sul nuovo HEAD; P4 in chiusura documentale; portabilità P5/P6 aperta
+Stato del file: registro del nodo convergenza AIOS/LOGOS; candidati in review, installazione non attestata
+Stato della procedura: percorso automatico acquisito mantenuto; candidato assistito in qualifica, Apply reale dei candidati disabilitato
 Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 
 ## Indice
@@ -29,7 +29,8 @@ Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 15. STP a tre livelli della decisione
 16. Checkpoint, switch e regole di continuità
 17. Registro dei passi e dei problemi risolti
-18. CQD, fonti e version history
+18. Convergenza documentale AIOS/LOGOS — preparazione del 16 ottobre 2026
+19. CQD, fonti e version history
 
 ## 1. Scopo, autorità e regole di aggiornamento
 
@@ -387,7 +388,86 @@ La tabella seguente conserva il registro del 5 ottobre. Per lo stato successivo 
 | 10 ottobre: Check manuale precedente | Check/raccolta PASS, 46 secondi, zero scritture | Report 57dc046d9f3493d8d8b4b2d2e7d7109d6911c436d0535148a6734ca0a955dfcc; proposta precedente, nessun Apply |
 | P4/P5/P6, stato al 10 ottobre | P4 in chiusura documentale; P5/P6 aperti | Check del diff aggiornato, consenso, Apply/gate/Verify/raccolta; commit/push manuali; profilo seconda repo e primo uso utile |
 
-## 18. CQD, fonti e version history
+
+## 18. Convergenza documentale AIOS/LOGOS — preparazione del 16 ottobre 2026
+
+### Stato e decisioni correnti
+
+Le sezioni datate precedenti conservano lo storico dei propri cicli. Questo
+registro aggiorna il solo nodo di convergenza; non riapre P3/P4 conclusi e non
+adotta una baseline globale. I riferimenti del preflight sono AIOS_CORE main
+6030399b63ed443fb871611e5cfea1aa48b16a94 e LOGOS main
+3b908fb7ea521cf3f4bf6992c6ea451e3d7232f7.
+
+L'ingresso della procedura documentale coincide con la chiusura del nodo di
+lavoro: decisioni ed esiti verificati della sessione individuano i documenti
+da rettificare. Le preimage locali complete, anche dirty, restano la base.
+Si preparano proposte coordinate, diff completi e metriche; seguono review,
+consenso specifico, esecuzione nel percorso qualificato e Verify indipendente.
+L'utente controlla visivamente i diff in VS Code e mantiene commit/push manuali.
+
+L'obiettivo concordato e un motore comune con regole esplicite per repository.
+Nomi, percorsi, archiviazione e particolarita di progetto non vengono trasferiti
+automaticamente da LOGOS ad AIOS o ad Adexima. I Markdown tracciati conservano
+il filename; la versione cambia nel contenuto e nella history. Il versioning
+nella prima riga si rimuove progressivamente soltanto in delta espliciti e
+revisionati, preservando le altre informazioni di versione e la storia.
+
+Il percorso automatico P6 acquisito conserva il suo perimetro. Il percorso
+assistito riprende l'esperienza dei batch LOGOS per aggiornamenti coordinati
+di piu documenti e per operazioni non disponibili nel percorso automatico.
+Un batch non implica atomicita globale: ogni file conserva preimage, backup,
+postimage e registrazione dell'esito. Un blocco richiede una scelta assistita
+distinta e revisionata, senza passaggio automatico ad altro esecutore.
+
+La posizione standard della versione corrente e la seconda riga, subito
+dopo il titolo. Il resoconto compatto delle modifiche resta alla fine,
+con tutte le voci precedenti e la nuova revisione. La migrazione si applica
+progressivamente ai soli documenti aggiornati, senza cancellare versioni.
+
+### Preparazione e prove disponibili
+
+Sono stati recuperati i sorgenti del batch LOGOS e del Verify di recovery,
+senza eseguirli nuovamente sui documenti reali. Il candidato comune 0.1 ha
+superato 27 prove isolate del motore e 10 della selezione dei percorsi.
+L'incremento 0.2 aggiunge binding delle fonti e launcher con pin, log e receipt:
+14 prove iniziali e 2 della diagnostica corretta; Check nativo di due documenti
+sintetici riuscito e richiesta Apply rifiutata come previsto.
+
+Un primo Check nativo e stato fermato da Git per diversa proprieta del fixture
+tra account sandbox e account operativo. Le prove sono conservate; un nuovo
+fixture dell'account operativo ha superato il Check, senza cambiare
+safe.directory, policy, LanguageMode o configurazioni.
+
+Riferimenti immutabili delle consegne di review:
+
+- AIOS_DOCUMENT_WORKFLOW_REVIEW_V01_20261016.zip, SHA-256
+  e425ab6b0ce2b9f618e9f8051d321a9dc4b1b2bf62f5843c4bc1d0189af5325d.
+- AIOS_DOCUMENT_WORKFLOW_REVIEW_V02_20261016.zip, SHA-256
+  ef9830c3699b40e6862edc1b703baa4e01fe9e2b692903309f8449785ec623a9.
+
+Il controllo del processo operativo riguarda le singole esecuzioni osservate:
+Windows PowerShell 5.1 Desktop, FullLanguage, RemoteSigned. La shell GUI puo
+essere PowerShell 7 Core ConstrainedLanguage. I nomi aios_readonly e
+logos_readonly identificano permessi Codex; nome e TOML non dimostrano da soli
+l'enforcement effettivo o l'origine umana di ogni approvazione.
+
+### Residuo e ordine di chiusura
+
+I candidati non sono installati e il loro Apply reale resta disabilitato.
+La preparazione della review non attesta consenso umano, adozione di baseline
+o production_ready. Restano da qualificare il gate produttivo vincolato al
+consenso specifico, il Verify nel relativo perimetro e la sessione VS Code
+effettiva. Le fonti e le assenze inventariate hanno scope dichiarato; eventuali
+istruzioni ulteriori richiedono acquisizione e review prima dell'azione.
+
+Sequenza: completamento e ciclo utile AIOS, Verify e review, aggiornamento dei
+documenti e commit manuale; poi LOGOS con boot, regole, binding e chiusura propri.
+Nessuna scrittura LOGOS o su servizi applicativi deriva da questo registro.
+Su errore o esito ignoto si preservano parziali e prove, senza retry, cleanup
+o rollback automatici. Una ripresa richiede un piano distinto e autorizzato.
+
+## 19. CQD, fonti e version history
 
 Fonti primarie interne storiche del 5 ottobre: protocollo STP v1.0, CQD v1.2, Session v1.2, State v1.1, Chat Anchor v1.1, Sistema Fonti v1.0, Boot v1.4, Kernel Manifest v1.2, Runtime Operating Layer v1.4, Project Instructions contenuto v3.1 e contratto Safe Document Apply v0.5 acquisiti dalla release. Il contratto storico mantiene le sue limitazioni: il presente piano non lo aggiorna implicitamente.
 
@@ -396,6 +476,8 @@ Fonti tecniche: runtime/contract release v0.3; materiali E01–E09; review del p
 CQD: header, indice, sezioni, rimandi e history presenti; stato acquisito, proposto e futuro separati. La v1.2 aggiorna tre range della v1.1 locale tracciata; conserva storico, evidenze del primo ciclo e byte esterni ai range. La v1.1 è stata provisionata e committata. La preparazione della v1.2 non attesta la sua Apply né il PASS del nuovo Check. Metriche calcolate prima dell'esportazione e confrontate con i byte nello ZIP, in `CQD_REPORT.json`, senza autoreferenza del proprio hash nel corpo. Pipeline locale di preparazione verificata; l'integrazione nella root e la review della futura Apply restano distinte.
 
 Version history:
+
+- v1.3 — 2026-10-16 — Registro del nodo convergenza: ingresso alla chiusura della sessione, motore comune e regole per repo, candidati isolati, limiti e sequenza AIOS poi LOGOS. Conservati storico e prove; questa proposta non attesta la propria Apply.
 
 - v1.2 — 2026-10-10 — Proposta finale P4: provisioning P3 e commit registrati; release guard e compatibilità file esclusi verificate; receipt corrente e Check precedente referenziati; nuovo HEAD, flusso accorpato, deroga di lettura puntuale, commit/push manuali. Questa postimage aggiornata conserva storico e byte esterni ai tre range; il proprio Check e Apply restano da attestare.
 
