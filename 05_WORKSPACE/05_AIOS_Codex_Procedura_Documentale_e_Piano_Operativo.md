@@ -1,13 +1,13 @@
 # 05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo
-Versione: v1.3
+Versione: v1.4
 
 Documento: procedura documentale ChatGPT / Codex in VS Code e piano operativo consolidato
-Data: 2026-10-10
+Data: 2026-10-17
 Sistema: AIOS — progetto AIOS_CORE
 Tipo: documento operativo di workspace, destinato alla repository
 Destinazione: `05_WORKSPACE/05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo.md`
-Stato del file: registro del nodo convergenza AIOS/LOGOS; candidati in review, installazione non attestata
-Stato della procedura: percorso automatico acquisito mantenuto; candidato assistito in qualifica, Apply reale dei candidati disabilitato
+Stato del file: proposta v1.4 di chiusura installazione AIOS 0.6-R01; Apply documentale e commit ancora da completare
+Stato della procedura: P6 preservato; collegamento comune AIOS installato e verificato; installazione LOGOS ancora da eseguire
 Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 
 ## Indice
@@ -30,6 +30,7 @@ Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 16. Checkpoint, switch e regole di continuità
 17. Registro dei passi e dei problemi risolti
 18. Convergenza documentale AIOS/LOGOS — preparazione del 16 ottobre 2026
+18.1 Release comune 0.6-R01 — installazione AIOS del 17 ottobre 2026
 19. CQD, fonti e version history
 
 ## 1. Scopo, autorità e regole di aggiornamento
@@ -467,6 +468,107 @@ Nessuna scrittura LOGOS o su servizi applicativi deriva da questo registro.
 Su errore o esito ignoto si preservano parziali e prove, senza retry, cleanup
 o rollback automatici. Una ripresa richiede un piano distinto e autorizzato.
 
+## 18.1 Release comune 0.6-R01 — installazione AIOS del 17 ottobre 2026
+
+Questa sezione aggiorna lo stato operativo del nodo. La preparazione del
+16 ottobre in sezione 18 e le sezioni datate precedenti restano storiche:
+le loro limitazioni descrivono i rispettivi snapshot. Non riaprono fasi
+concluse e non attestano una baseline globale o production_ready.
+
+### Esiti acquisiti e installazione effettiva
+
+Il manuale v1.3 ha completato Apply, Verify indipendente e review visiva
+dell'utente; il commit manuale AIOS e
+79ce0b425ea74d1c0c7418a03bfd2d133aa1c3be. Questo e anche l'HEAD locale
+vincolato al piano di installazione successivo; non e una nuova attestazione
+di pubblicazione remota.
+
+La compatibilita LOGOS e stata acquisita con boot e fonti propri sul pin
+3b908fb7ea521cf3f4bf6992c6ea451e3d7232f7, senza scritture nella repository.
+La release comune 0.6 ha superato 24/24 prove isolate; l'installatore
+aggiuntivo ha superato 8/8 prove isolate e il controllo nativo Info.
+Il primo tentativo di qualifica fallito e le sue prove restano conservati:
+la causa non e provata. Il PASS successivo appartiene al piano distinto
+autorizzato nel percorso DWF06_Q01; non si riscrive l'esito precedente.
+
+Il 17 ottobre e stato eseguito una sola volta il piano AIOS approvato:
+exit code 0, Verify indipendente VERIFIED_CREATE_ONLY_PROJECT_LINK,
+controllo nativo PROJECT_LINK_BYTES_VERIFIED e pin stabili dopo esecuzione.
+Il Verify registra cinque file nuovi, byte preesistenti preservati e indice
+Git invariato. Sono stati creati:
+
+- tools/codex/Invoke-DocumentWorkflow.ps1
+- tools/codex/document-workflow/project.json
+- tools/codex/document-workflow/profile.json
+- tools/codex/document-workflow/admission.json
+- tools/codex/document-workflow/README.md
+
+E stato creato anche il catalogo condiviso
+C:\AIOS_MIGRAZIONE\DWF06_Q01\RELEASE_COMMON_0_6_R01.json.
+Gli undici runtime P6 precedenti, AGENTS e configurazioni dei permessi
+sono stati preservati. Non e stata eseguita un'installazione LOGOS.
+La presente proposta v1.4 non attesta la propria Apply o il proprio Verify.
+
+### Uso, dipendenze e portabilita
+
+Il motore comune resta nel percorso qualificato
+C:\AIOS_MIGRAZIONE\DWF06_Q01, da conservare insieme alle sue prove.
+I collegamenti per repository vincolano profilo, identita, catalogo e pin.
+Il clone Git da solo non ricrea questa dipendenza esterna. Un nuovo PC o
+un diverso percorso richiede bootstrap e binding propri: non si spostano
+i moduli riutilizzando le qualificazioni come se il percorso fosse uguale.
+
+Alla chiusura del nodo si individuano i documenti da aggiornare, si leggono
+le preimage locali complete e si preparano proposte coordinate e diff.
+Seguono Check, review e consenso specifico, Apply con gate nel percorso
+qualificato, Verify indipendente e review visiva in VS Code. Commit e push
+restano manuali. I cinque file appena installati entrano nello snapshot
+locale da preservare durante il successivo aggiornamento del manuale.
+
+Il percorso comune assistito ammette aggiornamenti coordinati di Markdown
+tracciati esistenti; ogni file conserva preimage, backup, postimage ed esito.
+Le prove isolate non equivalgono a una Apply multi-documento reale in ogni
+repository. Il batch non offre atomicita globale. Nuovi documenti, nuove
+root, rinomine e operazioni mancanti richiedono un task assistito specifico;
+non diventano disponibili dichiarando soltanto una root inesistente.
+Un blocco non avvia automaticamente un altro esecutore o un ripristino.
+
+Per un nuovo progetto si riutilizzano il motore invariato e le sue prove,
+preparando identita, regole, permessi e binding locali, quindi i controlli
+e il primo uso pertinenti. Adexima non e stata configurata o qualificata:
+non si promette portabilita gia dimostrata da un test sintetico.
+
+Il nome del preset e il TOML non attestano l'enforcement effettivo.
+Info non aggiorna documenti. Le ricevute mantengono production_ready=false
+e non attestano in generale origine umana o permessi della sessione.
+Versione in seconda riga e storico compatto finale restano lo standard.
+
+### Riferimenti di ripartenza e chiusura
+
+Base delle prove Work:
+C:\Users\moody\.codex\.chatgpt-projects\g-p-69a8b7113e2c8191be15ccfb6234d471\artifacts\common_release_0_6_R01_20261017.
+
+- Piano AIOS consumato: prepared/AIOS_CORE/PLAN.json, SHA-256
+  2046f5b53225845812f1488d42d8c4ac09d28bd98a2ada02cde721d861241802.
+- Receipt Verify: prepared/AIOS_CORE/installation_9abbab54fedf41a6a8f321a5e1bc466e/receipt.json.
+- Receipt nativa: prepared/AIOS_CORE/native_install_9a465fb9d81d413dbe6fc5abe3e6ed4c/launch_receipt.json.
+- Qualifica motore: C:\AIOS_MIGRAZIONE\DWF06_Q01\document_activation_v0_5_20261016\TEST_REPORT_4a47b76736ff4690aac04be8c3044023.json,
+  SHA-256 b85ee350ebe9955fec817a8bd59beb5e3a96ce13e372b6c4004948b4d3410fd4.
+- Qualifica installatore: PROVISION_TEST_REPORT_552b79e069c948a5b7ac8325d4496686.json,
+  SHA-256 f3e8f265ec2685f2e311d78c304781b344fdff6ff48bd56d589fc1901e49126a.
+- Archivio di release: AIOS_LOGOS_COMMON_RELEASE_0_6_R01_20261017.zip,
+  SHA-256 bd4a5d9b8a03f2653eb752713d278e7e9bf884874de2d6369b62055f2af17c70.
+  La sua mappa distingue sorgenti incluse e dipendenze esterne; non e un
+  backup completo del PC. I piani inclusi descrivono lo stato preinstallazione.
+
+Sequenza residua: chiusura documentale AIOS con consenso, Apply/Verify,
+review e commit manuale; poi LOGOS con binding e consenso propri.
+Il vecchio piano LOGOS prevedeva CREATE del catalogo: dopo l'installazione
+AIOS occorre un piano nuovo con KEEP del catalogo esistente, senza riusare
+il precedente descriptor. Nessuna suite immutata si ripete per abitudine.
+Su errore o esito ignoto: STOP, conservare prove e parziali; nessun retry,
+cleanup o rollback automatico. Questa sezione non autorizza altre scritture.
+
 ## 19. CQD, fonti e version history
 
 Fonti primarie interne storiche del 5 ottobre: protocollo STP v1.0, CQD v1.2, Session v1.2, State v1.1, Chat Anchor v1.1, Sistema Fonti v1.0, Boot v1.4, Kernel Manifest v1.2, Runtime Operating Layer v1.4, Project Instructions contenuto v3.1 e contratto Safe Document Apply v0.5 acquisiti dalla release. Il contratto storico mantiene le sue limitazioni: il presente piano non lo aggiorna implicitamente.
@@ -476,6 +578,8 @@ Fonti tecniche: runtime/contract release v0.3; materiali E01–E09; review del p
 CQD: header, indice, sezioni, rimandi e history presenti; stato acquisito, proposto e futuro separati. La v1.2 aggiorna tre range della v1.1 locale tracciata; conserva storico, evidenze del primo ciclo e byte esterni ai range. La v1.1 è stata provisionata e committata. La preparazione della v1.2 non attesta la sua Apply né il PASS del nuovo Check. Metriche calcolate prima dell'esportazione e confrontate con i byte nello ZIP, in `CQD_REPORT.json`, senza autoreferenza del proprio hash nel corpo. Pipeline locale di preparazione verificata; l'integrazione nella root e la review della futura Apply restano distinte.
 
 Version history:
+
+- v1.4 — 2026-10-17 — Esiti della release comune 0.6-R01, installazione AIOS e Verify indipendente, dipendenza esterna e limiti di portabilita; chiusura AIOS prima di LOGOS. Versione in seconda riga, storico finale e byte esterni ai delta preservati. Proposta subordinata al proprio Check, consenso e Apply/Verify.
 
 - v1.3 — 2026-10-16 — Registro del nodo convergenza: ingresso alla chiusura della sessione, motore comune e regole per repo, candidati isolati, limiti e sequenza AIOS poi LOGOS. Conservati storico e prove; questa proposta non attesta la propria Apply.
 

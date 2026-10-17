@@ -1,0 +1,17 @@
+{
+  "admission": {
+    "path": "C:\\AIOS_GITHUB\\AIOS_CORE\\tools\\codex\\document-workflow\\admission.json",
+    "sha256": "f4e9aa23a8a3d91867fed7e7e1235e00acfaa4b0f7d27bfcc9515832396f4e39"
+  },
+  "catalog": {
+    "path": "C:\\AIOS_MIGRAZIONE\\DWF06_Q01\\RELEASE_COMMON_0_6_R01.json",
+    "sha256": "635c299f86cddaf7e3e5dcbccc6000c7a402066b151ac841e0d1f938905427d2"
+  },
+  "format": "AIOS-DOCUMENT-PROJECT-LINK/0.6",
+  "profile": {
+    "path": "C:\\AIOS_GITHUB\\AIOS_CORE\\tools\\codex\\document-workflow\\profile.json",
+    "sha256": "d02b08698e8c43954b594126f9a50271a35b760bca053b24c62d9673fd0704d8"
+  },
+  "project": "AIOS_CORE",
+  "root": "C:\\AIOS_GITHUB\\AIOS_CORE"
+}

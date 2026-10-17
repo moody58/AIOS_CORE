@@ -1,0 +1,9 @@
+{
+  "branch": "main",
+  "document_profile_sha256": "d02b08698e8c43954b594126f9a50271a35b760bca053b24c62d9673fd0704d8",
+  "format": "AIOS-PROJECT-ADMISSION/0.6",
+  "permissions_name": "aios_readonly",
+  "project": "AIOS_CORE",
+  "repository": "https://github.com/moody58/AIOS_CORE.git",
+  "root": "C:\\AIOS_GITHUB\\AIOS_CORE"
+}
