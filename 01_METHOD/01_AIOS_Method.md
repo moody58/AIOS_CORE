@@ -1,6 +1,6 @@
 Documento: 01_AIOS_Method
+Versione: v1.9
 
-Versione: v1.6
 
 Sistema: AIOS
 
@@ -256,36 +256,6 @@ Ogni evoluzione proposta viene registrata
 
 nel Radar Sistema e valutata prima di essere implementata.
 
-VERSION HISTORY
-
-v1.8
-
-Introduzione Conversational Knowledge Pipeline.
-
-Integrazione Anchor Conversazionali nel metodo AIOS.
-
-v1.6
-
-Introduzione Document Pipeline AIOS.
-
-Integrazione CQD nel metodo operativo.
-
-Introduzione regola di integrità documentale.
-
-v1.5
-
-Introduzione gerarchia delle fonti di stato.
-
-Separazione architetturale AIOS / LOGOS Engine.
-
-Definizione flusso insight LOGOS → Radar Sistema.
-
-Dichiarazione Kernel Documentale AIOS.
-
-v1.4
-
-Versione precedente del metodo.
-
 10\. DOCUMENT PIPELINE AIOS
 
 Il sistema AIOS utilizza una pipeline documentale per garantire
@@ -298,23 +268,37 @@ e rappresenta la sequenza operativa che ogni documento
 
 deve attraversare prima di essere considerato ufficiale.
 
-Sequenza operativa:
+Sequenza operativa per i Markdown canonici di AIOS_CORE:
 
-Anteprima documento
+Acquisizione del documento completo e delle fonti pinned pertinenti
 
-Verifica metriche preliminari
+Preparazione del delta e della proposta completa
 
-Generazione file DOCX
+Verifica CQD di sezioni, rimandi, versione in seconda riga e storico
 
-Verifica metriche post-export
+Acquisizione e binding della preimage locale completa, anche dirty
 
-Applicazione CQD
+Postimage, diff e metriche vincolati ai byte locali
 
-Consegna documento
+Check senza scrittura dei documenti
 
-Un documento è considerato ufficiale
+Review e consenso tecnico specifico prima di Apply
 
-solo dopo il completamento della Document Pipeline.
+Apply autorizzato, Verify indipendente e review nel percorso qualificato
+
+Consegna delle evidenze; commit e push manuali
+
+Si applicano 02_PROTOCOLS/02_AIOS_CQD_Protocol.md, sezione 12,
+e i contratti documentali pertinenti. Una proposta da GitHub non è
+una postimage locale definitiva e un Check non autorizza Apply.
+
+La sequenza storica Anteprima → metriche preliminari → DOCX →
+metriche post-export → CQD → consegna resta pertinente soltanto
+quando è richiesto quel formato. Non impone DOCX ai Markdown canonici.
+
+Un documento è considerato ufficiale soltanto dopo i gate pertinenti
+al formato e all'azione. Proposta, verifica locale, pubblicazione e
+recepimento conversazionale restano stati distinti.
 
 11\. INTEGRITÀ DOCUMENTALE
 
@@ -382,6 +366,13 @@ lavoro del metasistema AIOS.
 
 12\. CONVERSATIONAL KNOWLEDGE PIPELINE
 
+Gli Anchor organizzano la provenienza semantica della conversazione.
+Non attestano lettura integrale, preimage locale, byte, scritture o consenso.
+Un insieme di segmenti #DOC non sostituisce il documento precedente completo:
+verificare la proposta integrale e il diff, preservando le sezioni esterne
+ai range autorizzati. I riferimenti semantici non diventano automaticamente
+marker tecnici per l'esecutore.
+
 # 12. TRIGGER OPERATIVI DEL SISTEMA
 
 Il sistema AIOS utilizza trigger operativi per gestire le sessioni di
@@ -403,6 +394,45 @@ corrente.
 I trigger rappresentano strumenti operativi dell\'interfaccia
 conversazionale del sistema AIOS. Il loro comportamento operativo è
 definito nei protocolli specifici del sistema.
+
+Il linguaggio naturale attiva il protocollo contestualmente pertinente secondo
+02_PROTOCOLS/02_AIOS_Command_Layer.md. L'attivazione non concede permessi
+di scrittura né estende il nodo. Per anti-deriva, blocchi d'apertura/ripresa,
+continuità e chiusura applicare 01_METHOD/01_AIOS_SESSION_PROTOCOL.md.
+Le proposte di aggiornamento al Radar restano distinte dalla registrazione
+autorizzata; il Radar osserva, non decide.
+
+VERSION HISTORY
+
+v1.9 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: pipeline Markdown e DOCX per formato, distinzione tra Anchor e preimage/diff, attivazione contestuale e rinvii alle guardie di sessione. Versione proposta in seconda riga; voci pregresse conservate, inclusa v1.8 presente nello storico a fronte dell'header precedente v1.6. Nessuna pubblicazione attestata.
+
+v1.8
+
+Introduzione Conversational Knowledge Pipeline.
+
+Integrazione Anchor Conversazionali nel metodo AIOS.
+
+v1.6
+
+Introduzione Document Pipeline AIOS.
+
+Integrazione CQD nel metodo operativo.
+
+Introduzione regola di integrità documentale.
+
+v1.5
+
+Introduzione gerarchia delle fonti di stato.
+
+Separazione architetturale AIOS / LOGOS Engine.
+
+Definizione flusso insight LOGOS → Radar Sistema.
+
+Dichiarazione Kernel Documentale AIOS.
+
+v1.4
+
+Versione precedente del metodo.
 
 v1.6 — 2026-10-15: acquisizione integrale dalle fonti accessibili prima
 dell'upload. Pipeline, metriche pregresse e altri contenuti preservati;

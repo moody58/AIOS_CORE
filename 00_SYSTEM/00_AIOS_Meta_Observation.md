@@ -1,4 +1,5 @@
 # Scopo del documento
+Versione: v1.0
 
 Il Meta‑Observation Engine è il sistema di monitoraggio conversazionale
 del metasistema AIOS.
@@ -14,6 +15,22 @@ interviene suggerendo
 
 trigger, anchor o checkpoint quando individua pattern critici o nodi
 strutturali.
+
+# Attivazione contestuale e anti-deriva
+
+Il monitoraggio è assistenza conversazionale nel contesto della chat,
+non un processo autonomo o un servizio di sorveglianza. Riconoscere il
+segnale pertinente e attivare il protocollo secondo il documento madre:
+comandi ed equivalenti naturali, State/Source Guard, STP, Incident Management,
+CQD, Radar e Anchor nei rispettivi casi. Non attivare indiscriminatamente
+tutti i protocolli né inventare letture, test o registrazioni.
+
+La funzione assistiva non sostituisce l'anti-deriva preventivo obbligatorio.
+Prima di azioni operative, decisioni vincolanti o incarichi a tool verificare
+nodo, mandato/scope, fonti/stato, permessi/consensi e gate tecnici secondo
+Session Protocol e Sistema Fonti. Fuori scope: «DEVIAZIONE DAL NODO» e STOP
+della sola azione. Fonte, stato o gate mancanti: SAFE MODE mirata, senza
+falsa deviazione. Analisi e chiarimenti leciti continuano, senza aggiramenti.
 
 # Funzioni principali
 
@@ -117,7 +134,12 @@ docID: protocollo_operativo
 
 #DOC.protocollo_operativo.cqd
 
-Il cluster viene utilizzato come base per generare il documento finale.
+Il cluster viene utilizzato come base semantica per proporre il contenuto.
+Non sostituisce il documento precedente completo e non autorizza a ricostruire
+una preimage da segmenti di chat. Verificare l'intera proposta, preservando
+le sezioni esterne al delta; per scrivere servono preimage locale completa,
+hash dei byte, BOM/EOL, postimage, range e diff del percorso qualificato.
+Gli Anchor non sono marker tecnici byte-exact né consenso ad Apply.
 
 # Generazione del documento
 
@@ -139,10 +161,10 @@ Esempio:
 
 # Tracciabilità
 
-Il documento finale deve includere nel Revision Log gli anchor
-conversazionali
-
-che hanno contribuito alla generazione del contenuto.
+Il Revision Log conserva i riferimenti agli Anchor conversazionali che
+hanno contribuito al contenuto, quando realmente disponibili e pertinenti
+al delta approvato. Non inventare Anchor o inserirli come nuovi delimitatori
+tecnici del motore. La tracciabilità semantica non attesta letture o scritture.
 
 Questo consente di mantenere una catena di provenienza tra conversazione
 e
@@ -173,7 +195,10 @@ Gli anchor non vengono suggeriti per ogni frase della conversazione.
 Quando emerge un insight strategico rilevante il Meta‑Observation può
 suggerire
 
-la registrazione nel Radar di sistema.
+la proposta di registrazione nel Radar di sistema. La valutazione resta
+distinta dalla decisione; la registrazione richiede un delta autorizzato.
+Gli impatti trasversali seguono SYNC AIOS e Sistema Fonti; nessun aggiornamento
+automatico di Radar, State, Regia, Index o Registry.
 
 Pipeline tipica:
 
@@ -182,3 +207,15 @@ Pipeline tipica:
 → valutazione strategica
 
 → eventuale registrazione nel Radar
+
+# Output e continuità
+
+Segnalare decisioni, strutture o discontinuità pertinenti senza rituali
+ripetitivi. Per apertura, ripresa e chiusura applicare il Session Protocol.
+Nei passaggi operativi e ai gate indicare risultati osservati, evidenze,
+limiti, decisione e prossimo passo. Non dichiarare il nodo concluso o il
+recap recepito senza i risultati e le prove richiesti.
+
+# VERSION HISTORY
+
+v1.0 — 2026-10-19 — Prima versione esplicita proposta per il documento precedentemente privo di versione e storico. Nodo CP-ALLINEAMENTO-AIOS-20261019-01: assistenza contestuale distinta dal gate anti-deriva, Anchor semantici distinti da preimage/diff, registrazioni soltanto autorizzate e rinvio alla continuità di sessione. Contenuto precedente conservato salvo i delta dichiarati; nessuna Apply o pubblicazione attestata.

@@ -1,6 +1,6 @@
 Documento: 02_AIOS_STP_Protocol
+Versione: v1.1
 
-Versione: v1.0
 
 Progetto: AIOS
 
@@ -37,8 +37,12 @@ Lo STP riduce il rischio di errori sistemici verificando:\
 
 # 2 --- QUANDO ATTIVARE STP
 
-Lo STP deve essere attivato quando una decisione modifica elementi
-strutturali del sistema.\
+Lo STP deve essere attivato contestualmente quando una decisione modifica
+elementi strutturali del sistema o quando rischio, conflitto o problema
+complesso irrisolto richiedono una valutazione critica pertinente al nodo.
+Non serve attendere una parola chiave esplicita; verificare prima fonti,
+mandato e dipendenze. L'incarico esecutivo non riapre decisioni già concluse
+in assenza di nuove evidenze pertinenti.\
 \
 Casi tipici:\
 - architettura del sistema\
@@ -66,10 +70,13 @@ Livello 1 --- Coerenza logica\
 Verifica che la decisione non contenga contraddizioni.\
 \
 Livello 2 --- Impatto sistemico\
-Analisi dell'impatto sul metasistema, sui progetti e sui protocolli.\
+Analisi dell'impatto sul metasistema, sui progetti e sui protocolli,
+con controtesi e scenari limite espliciti.\
 \
 Livello 3 --- Robustezza strategica\
-Valutazione dei rischi nel medio e lungo periodo.
+Valutazione dei rischi nel medio e lungo periodo e simulazione delle
+conseguenze esterne della scelta. Dichiarare ipotesi, incertezze e limiti;
+una simulazione non è una prova di comportamento live.
 
 # 5 --- DOMANDE DI STRESS TEST
 
@@ -94,11 +101,11 @@ la decisione necessita modifiche.\
 RESPINTO\
 la decisione crea rischi sistemici.
 
-# VERSION HISTORY
-
-v1.0 --- Creazione Stress Test Protocol per il sistema AIOS.
-
 # CQD CHECK
+
+Il blocco seguente conserva le metriche storiche della revisione v1.0;
+non attesta il controllo della presente proposta.
+
 
 Parole (stima pre‑export): 223
 
@@ -107,3 +114,16 @@ Caratteri (stima pre‑export): 1564
 Integrità documento: verificata
 
 Struttura: coerente con standard AIOS
+
+L'esito STP deve indicare livelli effettivamente svolti, fonti, risultati,
+controtesi/scenari, incertezze e proposta motivata. Non inventare test esterni.
+APPROVATO qualifica la valutazione decisionale: non è consenso a una Apply,
+adozione di baseline o registrazione. Prima dell'azione valgono anti-deriva,
+Source/State Guard e gate tecnici. STP livello 3 riguarda robustezza strategica;
+CQD livello 3 riguarda il confronto documentale e non lo sostituisce.
+
+# VERSION HISTORY
+
+v1.1 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: attivazione contestuale e livelli AIOS con controtesi/scenari e simulazione esterna; esiti motivati e limiti rispetto a CQD e consenso tecnico. Versione proposta in seconda riga; storia e metriche precedenti conservate.
+
+v1.0 --- Creazione Stress Test Protocol per il sistema AIOS.

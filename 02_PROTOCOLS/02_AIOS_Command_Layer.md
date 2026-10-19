@@ -1,6 +1,6 @@
 # AIOS --- Command Layer
+Versione: v1.2
 
-Versione: v1.1
 
 Sistema: AIOS
 
@@ -30,7 +30,8 @@ di una shell nei sistemi operativi.
 
 #start --- avvio di una nuova sessione di lavoro nel sistema.
 
-#session --- apertura di una sessione operativa su un nodo specifico.
+#session --- verifica del mandato e avvio o prosecuzione del nodo nella
+microsessione, senza rigenerare il blocco d'apertura.
 
 #state --- generazione di uno snapshot dello stato della sessione
 
@@ -40,7 +41,8 @@ o del progetto.
 
 mantenendo il contesto.
 
-#log --- generazione di un Incident Report nel sistema di log AIOS.
+#log --- preparazione di un Incident Report secondo Incident Management;
+la registrazione persistente richiede un'azione autorizzata distinta.
 
 #help --- richiamo della guida operativa del sistema.
 
@@ -50,7 +52,10 @@ mantenendo il contesto.
 
 4 --- Principi operativi
 
-I trigger non sostituiscono il linguaggio naturale ma lo supportano.
+I trigger e le richieste equivalenti in linguaggio naturale attivano
+contestualmente la stessa funzione, seguendo il documento madre pertinente.
+Non occorre richiedere la parola chiave quando intento, nodo e mandato sono
+chiari. L'attivazione conversazionale non prova letture né concede permessi.
 
 Ogni trigger attiva una funzione specifica del sistema.
 
@@ -80,6 +85,10 @@ Quando viene utilizzato #start il sistema esegue la sequenza
 
 di inizializzazione della sessione operativa.
 
+#start è implicito all'ingresso in una nuova chat. Le fonti già acquisite
+integralmente allo stesso pin e nel contesto ancora valido si riusano;
+un richiamo del comando non impone un nuovo boot organizzativo del nodo.
+
 La sequenza ricostruisce:
 
 • contesto della sessione
@@ -94,7 +103,49 @@ Questo garantisce che ogni nuova sessione parta con il
 
 contesto corretto del metasistema AIOS.
 
+7 --- Output, continuità e limiti dei comandi
+
+#start: ricevuta di ruolo, nodo, mandato, repository/branch/SHA, fonti
+realmente lette e completezza, checkpoint, provenienza e limiti.
+
+Nodo confermato dalla Regia: la Regia produce il BLOCCO D'APERTURA secondo
+01_METHOD/01_AIOS_SESSION_PROTOCOL.md.
+
+#session o mandato equivalente nella microsessione: verificare mandato,
+dipendenze e fonti; avviare o proseguire il nodo confermato senza rigenerare
+il blocco d'apertura. Non creare un nuovo nodo implicito e non aprire
+un'altra chat per l'ordinaria esecuzione.
+
+#help: mostrare trigger, requisiti, documenti madre e limiti pertinenti.
+
+#quick e #deep: regolare profondità e dettaglio; scope, fonti e gate
+restano quelli del mandato.
+
+#state: snapshot di nodo/scope, fonti/SHA, checkpoint, decisioni/Anchor,
+risultati/prove, consensi ancora validi, stato DOCUMENTATO/VERIFICATO LIVE/
+IGNOTO, residui e prossimo passo. Non scrive il documento State.
+
+#switch: soltanto per cambio nodo, saturazione o perdita di contesto.
+Preparare #state, Anchor Register e blocco di ripresa; se il nodo prosegue
+mantenerne l'ID. La nuova chat esegue il proprio boot senza presumere letture.
+
+#log: report con fatti, ipotesi, severità e impatto; ID persistente e
+registrazione soltanto se realmente assegnati e verificati.
+
+Prima dell'azione verificare nodo, mandato/scope, fonti/stato, permessi,
+consensi e gate tecnici. Fuori scope: «DEVIAZIONE DAL NODO» e STOP della
+sola azione. Requisito mancante: SAFE MODE mirata, continuando l'analisi
+lecita; nessun fallback per aggirare il blocco. Il protocollo di sessione
+governa autonomia, escalation e chiusura.
+
+OUTPUT E VERIFICHE
+Nei passaggi operativi e ai gate indica risultato osservato, evidenze, limiti, decisione e prossimo passo; le conversazioni ordinarie non richiedono rituali di validazione a ogni messaggio. Il nodo si chiude PASS soltanto con risultati richiesti verificati; altrimenti BLOCCATO/FALLITO motivato con checkpoint riutilizzabile.
+
 Storico revisioni
+
+v1.2 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: equivalenti naturali, output e limiti dei comandi, anti-deriva e continuità, OUTPUT E VERIFICHE. Versione proposta in seconda riga; nessun comando tecnico, permesso o registrazione attivato dalla revisione.
+
+R02 — 2026-10-19 — Review editoriale mirata: nodo confermato dalla Regia distinto da #session nella microsessione; il primo produce il blocco d'apertura, il secondo verifica mandato, dipendenze e fonti e avvia/prosegue il nodo senza rigenerarlo. Nessuna esecuzione locale.
 
 v1.1 --- Collegamento tra trigger #start e Boot Sequence del sistema
 AIOS.

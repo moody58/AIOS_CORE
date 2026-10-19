@@ -1,8 +1,7 @@
 02_AIOS_CQD_Protocol
+Versione: v1.4
 
 Documento: 02_AIOS_CQD_Protocol
-
-Versione: v1.3
 
 Progetto: AIOS
 
@@ -44,7 +43,11 @@ Il suo obiettivo è assicurare che ogni documento esportato sia:
 
 2 --- QUANDO APPLICARE CQD
 
-Il CQD deve essere applicato prima di ogni esportazione di documento.
+Il CQD deve essere applicato alla generazione o all'aggiornamento di un
+documento e prima della sua consegna o esportazione, secondo formato e
+scope effettivi. Per i Markdown canonici vale la sezione 12; DOCX è
+richiesto soltanto quando pertinente alla consegna. Non applicare metriche
+rituali alle ordinarie risposte conversazionali.
 
 Casi tipici:
 
@@ -114,11 +117,9 @@ dimensione del file
 
 integrità del documento esportato
 
-VERSION HISTORY
-
-v1.0 --- Creazione protocollo CQD per controllo qualità documenti AIOS.
-
 CQD CHECK
+
+Le metriche seguenti sono storiche e restano riferite alla revisione originaria.
 
 Parole (stima pre-export): 148
 
@@ -130,9 +131,10 @@ Struttura: coerente con standard AIOS
 
 7 --- DOCUMENT PIPELINE AIOS
 
-Ogni documento ufficiale del sistema AIOS deve essere generato
-
-seguendo la Document Pipeline AIOS.
+Ogni documento ufficiale del sistema AIOS segue la pipeline pertinente
+al formato: sezione 12 per i Markdown in repository; sequenza DOCX
+seguente per le consegne che richiedono quel formato. Le metriche storiche
+non attestano la revisione corrente.
 
 Sequenza operativa:
 
@@ -183,6 +185,11 @@ mantenendo l'integrità del contenuto originale,
 salvo esplicita richiesta di sintesi.
 
 9 --- GESTIONE ERRORI GENERAZIONE DOCUMENTO
+
+La procedura seguente conserva la regola storica della sola generazione
+DOCX. Non si estende a letture/task locali, Check, Apply, Verify o Collect;
+non autorizza nuovi tentativi in un nodo che li vieta. Nel presente nodo
+CP-ALLINEAMENTO-AIOS-20261019-01 non si eseguono export o retry.
 
 In caso di errore nella generazione del file DOCX
 
@@ -236,16 +243,6 @@ Il Delta Check non sostituisce il CQD
 
 ed è utilizzato solo in caso di necessità.
 
-VERSION HISTORY
-
-v1.1 --- Introduzione Document Pipeline AIOS,
-
-regola integrità documentale,
-
-gestione errori generazione documenti
-
-e CQD Escalation Levels.
-
 # 11 --- DOCUMENTI DI GRANDI DIMENSIONI
 
 Quando un documento supera dimensioni compatibili con l'output singolo
@@ -269,8 +266,14 @@ Per i documenti Markdown della repository AIOS_CORE:
 1 --- Acquisire i byte completi della preimage e il relativo SHA-256.
 
 2 --- Preparare la postimage completa e il diff dei soli range approvati.
+Gli Anchor conversazionali indicano provenienza semantica: non sostituiscono
+preimage, postimage, range univoci o confronto dei byte. Una candidata derivata
+da GitHub va qualificata come riferimento editoriale fino al binding locale.
 
-3 --- Verificare header, versione, sezioni, rimandi, history e integrità.
+3 --- Verificare header, versione corrente in seconda riga, sezioni,
+rimandi, storico finale completo e integrità. Conservare il filename.
+Le migrazioni di header e history sono delta espliciti, senza refactor
+delle altre sezioni né alterazione delle voci storiche.
 
 4 --- Calcolare metriche della preimage e della postimage prevista.
 
@@ -299,7 +302,24 @@ retry di Apply: su errore transazionale STOP e conservare recovery.
 Configurazioni, AGENTS e strumenti sono esclusi dall'Apply documentale
 ordinario e richiedono provisioning separato.
 
-VERSION HISTORY — INTEGRAZIONE
+Lo stato del CQD preparatorio deve indicare risultati realmente osservati,
+fonti, limiti e prossimo gate. Non dichiarare Check/Apply/Verify PASS,
+byte locali preservati o documento pubblicato senza relative evidenze.
+La chiusura della sessione non equivale al consolidamento del nodo.
+
+VERSION HISTORY
+
+v1.4 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: precedenza della pipeline Markdown nel suo ambito, DOCX e retry storici circoscritti, Anchor distinti dai byte, versione in seconda riga e raccolta integrale dello storico alla fine. Revisione proposta; nessuna esportazione o esecuzione locale attestata.
+
+v1.0 --- Creazione protocollo CQD per controllo qualità documenti AIOS.
+
+v1.1 --- Introduzione Document Pipeline AIOS,
+
+regola integrità documentale,
+
+gestione errori generazione documenti
+
+e CQD Escalation Levels.
 
 v1.2 — 2026-10-02 — Header allineato allo storico; pipeline Markdown,
 filename stabile in repository, metriche e separazione dai retry DOCX.

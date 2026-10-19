@@ -1,6 +1,6 @@
 # Documento: 00_AIOS_Session_Protocol
+Versione: v1.4 Sistema: AIOS Tipo: Protocollo operativo di sessione
 
-Versione: v1.3 Sistema: AIOS Tipo: Protocollo operativo di sessione
 Anno: 2026
 
 ------------------------------------------------------------------------
@@ -45,8 +45,39 @@ Esempi:
 #quick\
 #deep
 
-Questi trigger permettono di indicare il tipo di lavoro che verrà svolto
-nella sessione.
+Questi trigger e i loro equivalenti naturali indicano il lavoro richiesto.
+L'ingresso in una nuova chat attiva il Core Boot pertinente; letture
+integrali e prove già valide si riusano senza un nuovo boot organizzativo.
+
+Control Room AIOS e Regie figlie sono discussioni, distinte dai documenti
+che ne descrivono mandato e stato. La Control Room coordina il metasistema;
+le Regie figlie decidono autonomamente nel proprio perimetro. Le aree
+esistono quando previste; le microsessioni eseguono un nodo confermato.
+
+Senza nodo confermato si resta nel coordinamento. Con nodo approvato,
+produrre subito il seguente blocco d'apertura copiabile, compilando soltanto
+dati noti e qualificando le assenze, senza richiedere un altro consenso
+organizzativo per il lavoro già delegato.
+
+BLOCCO D'APERTURA
+@@PROGETTO:
+Tipo di sessione:
+ID nodo e mandato:
+Checkpoint padre e provenienza:
+Obiettivo:
+Scope ed esclusioni:
+Output e criteri di chiusura:
+Decisioni e prove riusabili:
+Repository / branch / SHA:
+Fonti e checkpoint, provenienza e completezza:
+Dipendenze e input mancanti:
+Consensi, permessi osservati e divieti:
+Primo passo:
+Destinatario del recap:
+
+Il blocco non avvia un'altra chat, non attesta letture non svolte e non
+concede permessi tecnici. Identità del nodo e responsabilità restano
+quelle ricevute dalla Regia.
 
 ------------------------------------------------------------------------
 
@@ -92,12 +123,32 @@ snapshot operativo della sessione
 REGISTRY\
 vista sintetica del sistema
 
+Questa gerarchia è direzionale. Non sostituisce l'organizzazione
+Control Room → Regie figlie → aree quando previste → microsessioni,
+né la provenienza documentale definita dal Kernel e dal Sistema Fonti.
+
 ------------------------------------------------------------------------
 
 # 7 --- SVILUPPO OPERATIVO
 
-Durante lo sviluppo operativo AIOS può utilizzare Anchor semantici per
-marcare i nodi principali della conversazione.
+Prima di ogni azione operativa, decisione vincolante o incarico a tool
+verificare nodo, mandato/scope, fonti/stato, permessi/consensi e gate tecnici.
+Fuori nodo o scope: «DEVIAZIONE DAL NODO» motivata e STOP della sola azione.
+Requisito mancante: SAFE MODE mirata dell'azione dipendente, senza falsa
+deviazione. Continuare analisi e chiarimenti leciti; nessun aggiramento.
+
+La microsessione gestisce nella stessa chat esecuzione, review, anomalie
+e chiusura del nodo. Work e Codex mantengono i ruoli qualificati; i risultati
+tornano alla chat responsabile. Si escala soltanto per scope o direzioni
+non delegati, senza rientri ripetuti per passaggi già autorizzati.
+Non aprire nuovi nodi, audit globali, anticipazioni di roadmap o refactor
+non richiesti. Su errore o UNKNOWN conservare prove e parziali, senza retry,
+cleanup o rollback automatici.
+
+Durante lo sviluppo operativo AIOS utilizza contestualmente gli Anchor
+pertinenti per marcare i nodi principali della conversazione. Gli Anchor
+sono semantici: non sostituiscono preimage locale completa, postimage,
+range e diff, né certificano una scrittura.
 
 Anchor principali:
 
@@ -125,24 +176,46 @@ Il consolidamento può includere:
 -   registrazione nel Radar
 -   aggiornamento dello stato progetto
 
+Si tratta di proposte da verificare, non di scritture implicite.
+Applicare CQD al formato effettivo e la procedura documentale qualificata
+quando esiste un delta utile; Check e consenso specifico precedono Apply.
+STP si attiva secondo il proprio protocollo per le scelte pertinenti,
+senza riaprire decisioni concluse nel semplice incarico esecutivo.
+
 ------------------------------------------------------------------------
 
 # 9 --- AGGIORNAMENTO DELLA REGIA
 
 La Regia rappresenta la fotografia direzionale del progetto.
 
-Al termine della sessione eventuali modifiche operative possono
-richiedere l'aggiornamento della Regia.
+Al termine della sessione preparare un unico recap per la Regia competente:
+nodo/scope, decisioni, risultati, SHA e prove, anomalie, residui e seguito.
+La Regia resta leggera; non trasferire debug ordinario fuori mandato.
+Distinguere PREPARATO, TRASFERITO e RECEPITO, ciascuno con la propria prova.
+Non dichiarare la Regia aggiornata per la sola preparazione del recap.
+
+Per impatti trasversali metodologici, strategici o strutturali preparare
+SYNC AIOS alla Control Room secondo Sistema Fonti e Event Registry.
+Ricezione e riconciliazione non autorizzano registrazioni; nessun SYNC
+è richiesto per il progresso ordinario locale.
 
 ------------------------------------------------------------------------
 
 # 10 --- CHIUSURA SESSIONE
 
-La sessione termina quando:
+Confrontare risultati e dipendenze con i criteri di chiusura; produrre
+#DOC oppure #CHECKPOINT con evidenze, limiti, residui e prossimo passo.
 
--   il nodo operativo è stato completato
--   le decisioni sono state consolidate
--   lo stato del progetto è stato aggiornato
+Classificare la sessione PASS, BLOCCATA o FALLITA secondo il mandato.
+Una sessione può consegnare un checkpoint d'impedimento riutilizzabile.
+PASS della sessione non equivale a completamento del nodo complessivo:
+distinguere fine tecnica, consolidamento documentale, commit/push,
+pubblicazione, tab e recepimento. Il nodo si chiude PASS soltanto quando
+i risultati richiesti sono verificati; altrimenti motivare BLOCCATO/FALLITO.
+
+Nei passaggi operativi e ai gate indicare risultato osservato, evidenze,
+limiti, decisione e prossimo passo. Le conversazioni ordinarie non
+richiedono validazioni rituali a ogni messaggio.
 
 ------------------------------------------------------------------------
 
@@ -154,23 +227,40 @@ AIOS può generare uno snapshot sintetico dello stato tramite il trigger:
 
 Lo snapshot include:
 
--   progetto attivo
--   macroarea
--   nodo operativo
--   documenti coinvolti
--   decisioni recenti
+-   progetto attivo e macroarea
+-   nodo, mandato, scope ed esclusioni
+-   repository/branch/SHA, fonti e completezza, checkpoint e provenienza
+-   decisioni e Anchor, risultati e prove
+-   consensi ancora validi e permessi realmente osservati
+-   stato DOCUMENTATO, VERIFICATO LIVE o IGNOTO, con istante e limiti
+-   dipendenze, residui, rischi e prossimo passo
+
+Lo snapshot conversazionale non scrive automaticamente il documento State.
 
 ------------------------------------------------------------------------
 
 # 12 --- CHECKPOINT OPERATIVO
 
-Quando una discussione cambia nodo operativo oppure diventa
-eccessivamente estesa AIOS può suggerire un checkpoint.
+Per cambio nodo, saturazione o perdita di contesto preparare #state,
+Anchor Register e #switch. Un nuovo commit richiede rebind esplicito,
+non automaticamente una nuova chat. Se il nodo prosegue, conservarne l'ID.
 
-Sequenza suggerita:
+BLOCCO DI RIPRESA
+@@PROGETTO / tipo:
+ID nodo e checkpoint padre:
+Mandato, scope ed esclusioni:
+Repository / branch / SHA e fonti con provenienza/completezza:
+Decisioni e prove valide da riusare:
+Operazioni concluse, interrotte, parziali o UNKNOWN:
+Consensi ancora validi e divieti:
+Output prodotti e criteri ancora aperti:
+Dipendenze, rischi e input mancanti:
+Primo passo o comando già predisposto e verificato:
+Destinatario del recap:
 
-#state\
-#session
+Non inventare un primo comando se mancano task o binding. Nella nuova chat
+eseguire il boot pertinente senza presumere letture ereditate. Richieste e
+consensi consumati non si riusano; le prove immutate restano riutilizzabili.
 
 ------------------------------------------------------------------------
 
@@ -187,6 +277,8 @@ Metriche POST: Paragraphs: 69 Characters: 3402 Words: 421 Hash:
 e4d83c20afcd25a0495b975b4539edb230fb6169ed4e1ca59708d92046d07680
 
 # VERSION HISTORY
+
+v1.4 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: ruoli e autonomia, blocchi d'apertura/ripresa, anti-deriva preventivo e SAFE MODE selettiva, continuità e recap, stati di chiusura e SYNC senza scrittura implicita. Versione proposta in seconda riga; report CQD e voci precedenti conservati.
 
 v1.3 — 2026-10-15 — Fonti tramite integrazioni, memoria come supporto e
 checkpoint pertinenti. Per nuove versioni dichiarare un nuovo boot/SHA;

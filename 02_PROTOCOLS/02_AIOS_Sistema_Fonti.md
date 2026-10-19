@@ -1,6 +1,6 @@
 Documento: 02_AIOS_Sistema_Fonti
+Versione: v1.2
 
-Versione: v1.1
 
 Progetto: AIOS
 
@@ -147,12 +147,47 @@ righe o controllo live estraneo e' necessario a una sessione solo documentale.
 Accesso in lettura non autorizza scritture; permessi tecnici e connessioni
 vanno osservati, non dedotti dal testo delle istruzioni.
 
-# VERSION HISTORY
+## 7.1 — Source Guard, State Guard e classi di evidenza
 
-v1.1 — 2026-10-15 — Fonti da repository a SHA fisso, working copy, live, allegati e checkpoint.
-Le metriche CQD sottostanti sono storiche, non misure della presente revisione.
+Attivare contestualmente il protocollo quando servono fonti, stato,
+preimage, verifica live o riconciliazione. Prima dell'azione verificare
+completezza, provenienza e sufficienza delle fonti effettivamente necessarie.
+Riutilizzare letture integrali valide nello stesso contesto e allo stesso
+SHA; non riaprire acquisizioni concluse senza un requisito nuovo.
 
-v1.0 --- Creazione protocollo Sistema Fonti per il sistema AIOS.
+Un 404 su repository privata non prova inesistenza. Verificare l'accesso
+tramite le capacità disponibili; non imporre Drive, modificare visibilità
+o sostituire silenziosamente la fonte. Per ogni alternativa dichiarare
+origine, versione/data, contenuto coperto, divergenze e limiti.
+
+Distinguere DOCUMENTATO, VERIFICATO LIVE e IGNOTO con oggetto, proprietà,
+istante e prova. Il pin GitHub qualifica il consolidato; la ricevuta di
+Git pulito non certifica byte, BOM/EOL, newline, file esclusi o permessi.
+
+Fonte o stato mancanti: tentare il recupero pertinente e chiedere soltanto
+l'input ancora necessario; SAFE MODE della sola azione dipendente.
+Fuori nodo o scope: «DEVIAZIONE DAL NODO» e STOP dell'azione incompatibile.
+La mancanza di un requisito non va qualificata come falsa deviazione.
+Analisi e chiarimenti leciti possono continuare, senza aggiramenti,
+retry o ricostruzioni da estratti.
+
+## 7.2 — SYNC AIOS, riconciliazione e scritture
+
+SYNC AIOS è pertinente agli impatti trasversali metodologici, strategici
+o strutturali, non ai progressi ordinari locali. La Control Room riceve
+il blocco, verifica provenienza ed evidenze, confronta eventi esistenti
+ed evita duplicazioni; quindi prepara la proposta di registrazione secondo
+03_REGISTRY/AIOS_EVENT_REGISTRY.md.
+
+Ricezione, riconciliazione e proposta non equivalgono a scrittura autorizzata.
+Il recap alla Regia conversazionale segue PREPARATO → TRASFERITO → RECEPITO,
+con prove del passaggio e del recepimento. Le modifiche ai file di Event
+Registry, Dashboard, Project Index, Radar, Regia o State richiedono
+separatamente target, preimage, delta, consenso e gate pertinenti.
+Non alterare registrazioni storiche né dichiarare un ID o un recepimento
+persistente senza prova; il recap conversazionale non attesta una scrittura
+documentale.
+Nel nodo CP-ALLINEAMENTO-AIOS-20261019-01 l'Event Registry è soltanto fonte.
 
 # CQD CHECK
 
@@ -163,3 +198,14 @@ Caratteri (stima pre-export): 1534
 Integrità documento: verificata
 
 Struttura: coerente con standard AIOS
+
+# VERSION HISTORY
+
+v1.2 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: accesso/provenienza e classi di evidenza, Source/State Guard selettive e SYNC come ricezione/riconciliazione/proposta senza scrittura implicita. Versione proposta in seconda riga; storico e metriche pregresse conservati.
+
+R02 — 2026-10-19 — Review editoriale mirata: recap della Regia conversazionale con stati e prove di trasferimento/recepimento distinto dalla modifica dei file, soggetta separatamente a preimage, delta, consenso e gate. Nessuna scrittura o esecuzione locale.
+
+v1.1 — 2026-10-15 — Fonti da repository a SHA fisso, working copy, live, allegati e checkpoint.
+Le metriche CQD sottostanti sono storiche, non misure della presente revisione.
+
+v1.0 --- Creazione protocollo Sistema Fonti per il sistema AIOS.
