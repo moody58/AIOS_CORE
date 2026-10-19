@@ -1,19 +1,28 @@
-AIOS --- EVENT REGISTRY Versione: v1.2
+AIOS --- EVENT REGISTRY
+Versione: v1.3
 
 Scopo Il registro eventi AIOS raccoglie gli eventi strutturali
-provenienti dai progetti del metasistema. Gli eventi sono generati dai
-progetti tramite blocchi SYNC AIOS e registrati dalla Control Room.
+provenienti dai progetti del metasistema. I progetti segnalano eventi
+tramite blocchi SYNC AIOS; la Control Room valuta e propone
+la registrazione, che avviene solo dopo consenso e gate pertinenti.
 
-Principio architetturale I progetti NON leggono AIOS. AIOS osserva e
-registra gli eventi generati dai progetti.
+Principio architetturale I progetti NON leggono AIOS. AIOS riceve e
+riconcilia gli eventi segnalati dai progetti; la registrazione non è
+automatica.
 
 Pipeline eventi
 
-Progetto ↓ SYNC AIOS (blocco evento) ↓ Control Room AIOS ↓ Registrazione
-evento ↓ AIOS_EVENT_REGISTRY
+Progetto ↓ SYNC AIOS (blocco evento) ↓ Ricezione Control Room AIOS
+↓ verifica provenienza e riconciliazione con eventi esistenti
+↓ proposta di registrazione ↓ consenso e gate pertinenti
+↓ eventuale registrazione autorizzata ↓ AIOS_EVENT_REGISTRY
 
-Regola operativa Quando la Control Room riceve un blocco SYNC AIOS
-durante una sessione, deve registrare un evento nel presente documento.
+Regola operativa Quando la Control Room riceve un blocco SYNC AIOS,
+verifica provenienza ed evidenze, confronta gli eventi esistenti per
+evitare duplicazioni e prepara una proposta. La ricezione non autorizza
+scritture: un evento è registrato solo con delta, preimage locale completa,
+consenso specifico e gate tecnici pertinenti. In assenza dei requisiti,
+la registrazione resta sospesa, senza assegnare ID persistenti.
 
 Formato evento
 
@@ -81,6 +90,12 @@ CLI sessione 01a0fe84-53b8-7761-9f07-0ff7741ccc78.
 ---
 
 VERSION HISTORY
+
+v1.3 — 2026-10-19 — Nodo CP-AIOS-EVENT-REGISTRY-20261019-01:
+allineamento della gestione SYNC a ricezione, riconciliazione,
+proposta e registrazione soltanto dopo consenso e gate pertinenti.
+Versione riportata in seconda riga. Eventi e storico precedenti
+conservati; nessuna registrazione retroattiva.
 
 v1.2 — 2026-10-02 — Candidato: una voce strutturale per il percorso
 documentale Codex AIOS_CORE; evidenze acquisite e setup ancora aperto.
