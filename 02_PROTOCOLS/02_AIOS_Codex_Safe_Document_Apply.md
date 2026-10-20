@@ -1,13 +1,13 @@
 # AIOS Codex Safety Contract
+Versione: v0.7
 
 Documento: 02_AIOS_Codex_Safe_Document_Apply
-Versione: v0.6
-Data: 2026-10-09
+Data: 2026-10-20
 Sistema: AIOS
 Nodo: AIOS CODEX SAFE DOCUMENT APPLY
 Anchor: #DOC.aios.codex.safe_document_apply.contract
-Stato: allineamento P3; cinque cicli documentali tracciati chiusi.
-Attivazione di questa revisione: condizionata a provisioning separato autorizzato e Verify.
+Stato: candidato del consolidamento ibrido D; i cinque cicli P3 sono storici e chiusi nel loro scope.
+Attivazione di questa revisione v0.7: NON eseguita; richiede provisioning separato autorizzato, Verify e review.
 Baseline non adottata; production_ready=false.
 
 ## 1. Fonti e responsabilità
@@ -39,7 +39,15 @@ Prima di compilare l'handoff devono essere disponibili i file precedenti
 completi della working copy, con SHA-256 dei byte reali. Lo SHA-1 del blob Git
 ha un ruolo distinto. Le conversioni LF/CRLF di Git non autorizzano modifiche
 globali ai documenti locali. Fonti, profilo, policy, schema ed esecutore sono
-vincolati da impronte.
+vincolati da impronte. È ammessa l'acquisizione integrale dal commit GitHub
+verificato per preparare una postimage **solo se** la rappresentazione locale,
+inclusi BOM/EOL/newline/encoding, è ricostruibile senza ambiguità e coincide
+per dimensioni e SHA-256 con la verifica byte-esatta effettuata sul PC.
+La working tree pulita, da sola, non prova tale equivalenza; un target dirty
+o una conversione incerta richiede la preimage locale integrale. Per ogni file
+identificare root Git e percorso relativo completo, mai soltanto il basename.
+Questa ottimizzazione di lettura non sostituisce la ricontrollata preimage
+reale immediatamente prima di una scrittura.
 
 Durante Check: root/origin/branch/HEAD/upstream corrispondenti, verifica
 remota del branch atteso senza fetch/pull; immediatamente prima di Apply
@@ -101,6 +109,29 @@ Il report include diff completo, diff --check e diff esplicito dei file nuovi
 anche se untracked. HEAD/indice invariati e soli target autorizzati modificati.
 Review in ChatGPT esegue CQD documentale/semantico e valuta il risultato.
 Hash corretti non certificano la validità delle decisioni.
+
+## 6.1 Corsia C — sostituzione manuale dell'utente (non nativa)
+
+Per Markdown **esistenti, tracciati, non protetti** e con rischio contenuto, il
+manuale operativo (§5.1) consente la preparazione di un pacchetto statico
+coordinato. La disponibilità di questa corsia dipende dai gate di progetto e
+dal consenso specifico dell'utente. L'AI fornisce preimage byte-identiche,
+postimage complete, diff, SHA-256, layout, root e target chiusi, backup e
+criteri di verifica. L'utente effettua personalmente la copia dei soli file
+approvati. Il pacchetto non esegue comandi né trasferisce un permesso di
+scrittura a ChatGPT, Codex o al motore nativo.
+
+Prima di copiare verificare nuovamente sul PC identità repository, HEAD,
+indice, stato Git, SHA-256 e backup esterno integrale della preimage. Dopo
+la copia rileggere i file effettivi e confrontare dimensioni, hash, EOL,
+BOM, terminazione, versioni, storico e modifiche estranee; registrare l'esito
+come **verifica documentale assistita**, non Apply/Verify nativo. Ogni anomalia
+o partial impone STOP mirato e conservazione delle prove, senza retry,
+cleanup, ripristino o fallback automatico. Non è garantita atomicità globale.
+I file protetti e le operazioni speciali conservano il loro setup/provisioning
+separato; un eventuale blocco del percorso nativo richiede una scelta
+alternativa esplicita, non una sostituzione automatica. Commit e push restano
+manuali e selettivi dopo verifica appropriata.
 
 ## 7. CQD
 
@@ -313,6 +344,8 @@ e primo aggiornamento utile in un'altra repository restano P5. Nessuna Apply,
 adozione baseline, scrittura Git o portabilità è implicita in questo contratto.
 
 ## Revision log
+
+v0.7 — 2026-10-20 — Proposta nel nodo CP-AIOS-DWF-CONSOLIDAMENTO-20261020-01: Source Guard GitHub-first con prova dei byte locali e sezione 6.1 della corsia C; protezioni e Verify nativo invariati. Revisione NON ancora provisionata, verificata o pubblicata.
 
 v0.6 — 2026-10-09 — Proposta coordinata P3: stato dei cinque cicli tracciati,
 Run accorpati nel proprio ambito, letture locali, log e riprese; separazione

@@ -1,7 +1,7 @@
 AIOS — AI Operating System
-Versione: v3.5
+Versione: v3.6
 
-Stato revisione: allineamento editoriale Gate 2; gli snapshot P3 sottostanti sono storici e non riaprono P4
+Stato revisione: candidato ibrido D; bootstrap e gate storici conservati, senza Apply, commit, push o aggiornamento tab della v3.6
 Nome file stabile: AIOS_PROJECT_INSTRUCTIONS_RUNTIME.md
 
 ## BOOTSTRAP TAB CHATGPT
@@ -41,7 +41,7 @@ INCIDENT MANAGEMENT
 TRIGGER: anomalia rilevante, UNKNOWN o #log. Leggi 02_PROTOCOLS/02_AIOS_Incident_Management.md; classifica gravità/impatto, raccogli prove, separa fatti/ipotesi. OUTPUT: Incident Report e blocco mirato. Non inventare ID persistenti, retry, rollback o registrazioni.
 
 CQD E PROCEDURA DOCUMENTALE
-TRIGGER: #DOC, chiusura con delta o «avvia la procedura documentale». Leggi 02_PROTOCOLS/02_AIOS_CQD_Protocol.md: CQD sul formato: Markdown completo, versione seconda riga/storico; DOCX se pertinente. Per la procedura leggi 05_WORKSPACE/05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo.md, 02_PROTOCOLS/02_AIOS_Codex_Safe_Document_Apply.md e tools/codex/document-workflow/README.md. Usa SOLO percorso qualificato. Chat coordina/revisiona; Codex VS Code acquisisce ed esegue task pinned; Work prepara postimage/diff/handoff solo se necessario. OUTPUT: target/delta/prove. GATE: preimage → diff → Check → review/consenso tecnico → Apply autorizzato → Verify indipendente/review → commit/push manuali. Avvio ≠ Apply. FAIL/UNKNOWN: preserva prove/parziali; niente nuovi script, retry, cleanup, fallback o rollback.
+TRIGGER: #DOC, chiusura con delta o «avvia la procedura documentale». Leggi 02_PROTOCOLS/02_AIOS_CQD_Protocol.md: CQD sul formato: Markdown completo, versione seconda riga/storico; DOCX se pertinente. Per la procedura leggi 05_WORKSPACE/05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo.md, 02_PROTOCOLS/02_AIOS_Codex_Safe_Document_Apply.md e tools/codex/document-workflow/README.md. Manuale: C (copia utente ordinari), A (nativa qualificata); B esclusa. GitHub: hash/layout locale al pin. Chat revisiona, Codex attesta. OUTPUT: target/delta/prove. C: preimage/backup → diff/consenso → copia → verifica assistita; A: Check → consenso → Apply → Verify indipendente. Commit/push manuali. Avvio ≠ Apply. FAIL/UNKNOWN: preserva prove/parziali; niente nuovi script, retry, cleanup, fallback o rollback.
 
 CHIUSURA, REGIE E SYNC AIOS
 TRIGGER: chiusura o evento trasversale. Verifica criteri; DISTINGUI sessione PASS/BLOCCATA/FALLITA, fine tecnica/documentale, commit/push, tab e recepimento. PASS sessione ≠ nodo concluso. Produci #DOC o #CHECKPOINT e UN recap a Regia: nodo, decisioni, risultati, SHA/prove, residui, seguito. PREPARATO → TRASFERITO → RECEPITO solo con prova. Per impatto trasversale metodologico/strategico/strutturale prepara SYNC AIOS alla Control Room; segui 03_REGISTRY/AIOS_EVENT_REGISTRY.md e Sistema Fonti, riconcilia e proponi registrazione autorizzata. Non SYNC per progressi ordinari locali. OUTPUT: recap/SYNC verificato. STOP: SYNC ≠ registrazione; niente pubblicazione/tab/recepimento senza prova. Solo dopo Apply/Verify/review, commit/push, nuovo SHA e confronto letterale bootstrap ≤8000 dichiara «TAB AIOS PRONTA DA INCOLLARE», guida backup/tab manuale, poi collaudo.
@@ -71,6 +71,15 @@ il nodo nella stessa chat fino alla chiusura. Per apertura, ripresa,
 autonomia e recap applicare 01_METHOD/01_AIOS_SESSION_PROTOCOL.md.
 REGIA > STATE > REGISTRY resta gerarchia direzionale, distinta da
 organizzazione e provenienza delle fonti.
+
+Per la procedura documentale applicare la scelta C/A secondo il manuale,
+prima di proporre Check, Run o sostituzioni. C non equivale a un Verify nativo,
+e GitHub è una fonte di contenuto soltanto quando la sua ricostruzione
+corrisponde ai byte della working copy attestati. Se manca la prova della
+corrispondenza, richiedere la preimage locale completa identificata per root
+e percorso relativo; non prescrivere upload di routine. Nessun motore B e
+nessun fallback implicito. Questa istruzione non aggiorna il contratto
+protetto né concede l'Apply.
 
 Per i Markdown canonici vale la pipeline della sezione 12 del CQD;
 DOCX soltanto quando pertinente al formato richiesto. Anchor e segmenti
@@ -628,6 +637,8 @@ Gli avanzamenti ordinari locali non richiedono SYNC.
 
 
 VERSION HISTORY
+
+v3.6 — 2026-10-20 — Proposta di allineamento alla scelta C/A e GitHub-first con controllo locale byte-esatto; protezioni native e storia conservate. Nessuna Apply/provisioning, tab, commit o push effettuati.
 
 v3.5 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: bootstrap conclusivo candidato integrale con OUTPUT E VERIFICHE; attivazione contestuale, anti-deriva e STOP selettivo, autonomia e continuità delle sessioni, pipeline per formato, STP e SYNC senza scritture implicite. Versione in seconda riga; snapshot e voci precedenti conservati. Revisione proposta, senza attestazione di Apply, pubblicazione o modifica della tab.
 
