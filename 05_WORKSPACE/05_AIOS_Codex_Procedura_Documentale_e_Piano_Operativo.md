@@ -1,13 +1,13 @@
 # 05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo
-Versione: v1.5
+Versione: v1.6
 
 Documento: procedura documentale ChatGPT / Codex in VS Code e piano operativo consolidato
 Data: 2026-10-20
 Sistema: AIOS — progetto AIOS_CORE
 Tipo: documento operativo di workspace, destinato alla repository
 Destinazione: `05_WORKSPACE/05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo.md`
-Stato del file: proposta v1.5 non applicata; v1.4 pubblicata il 17 ottobre 2026 (commit ea8afe897505a4166b3144e54bb608e266160b8a); nessuna Apply/Verify nativa della v1.4 attestata da tale commit
-Stato della procedura: P6 preservato; collegamento comune AIOS installato e verificato; installazione LOGOS ancora da eseguire
+Stato del file: v1.5 pubblicata e acquisita nel commit AIOS_CORE 55ab1d10f8ffe7cfe1e266a5a12e8793254dba1e; la presente v1.6 è soltanto candidata, senza Apply, Verify, commit o push
+Stato della procedura: P6 storico preservato; collegamento comune AIOS installato e verificato nel proprio scope; lo stato attuale di LOGOS è fuori dal perimetro di questa revisione
 Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 
 ## Indice
@@ -17,6 +17,7 @@ Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 3. Stato storico acquisito e aggiornamento corrente 3.1
 4. Procedura del primo ciclo — storico del 5 ottobre
 5. Procedura ordinaria e controlli da conservare
+5.1 Modello ibrido D — scelta della corsia e preimage senza upload ricorrente
 6. Comando universale conversazionale
 7. Contratto del pacchetto per documento
 8. Snapshot, approvazioni e continuità dopo commit
@@ -32,6 +33,7 @@ Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 18. Convergenza documentale AIOS/LOGOS — preparazione del 16 ottobre 2026
 18.1 Release comune 0.6-R01 — installazione AIOS del 17 ottobre 2026
 18.2 Checkpoint del 20 ottobre 2026 — pilota statico assistito
+18.3 Checkpoint DWF ibrido del 20 ottobre 2026
 19. CQD, fonti e version history
 
 ## 1. Scopo, autorità e regole di aggiornamento
@@ -138,6 +140,8 @@ I PASS isolati del nucleo e dei bridge sono prove dei componenti. Non dichiarano
 
 ## 5. Procedura ordinaria e controlli da conservare
 
+I dodici passi sottostanti descrivono il percorso documentale nativo già qualificato e le sue salvaguardie comuni. La regola di scelta approvata per il modello ibrido D è nella §5.1: la semplice disponibilità di un motore non ne rende obbligatorio l'uso per ogni documento.
+
 1. Identificare progetto, documenti interessati e capacità dell'esecutore già verificate. Riutilizzare fonti e prove immutate; acquisire soltanto contenuti completi o metadati realmente mancanti.
 2. Leggere i target completi della working copy sul PC e vincolare hash e snapshot. Le modifiche non committate sono contenuto da preservare, non un errore da ripulire o sostituire con GitHub.
 3. Preparare postimage, diff completo, range, metriche e pin. Più proposte possono stare in un pacchetto coordinato; ogni scrittura conserva scope e decisione propri. Per i tre non tracciati usare un provisioning separato, non il bridge ordinario.
@@ -151,7 +155,19 @@ I PASS isolati del nucleo e dei bridge sono prove dei componenti. Non dichiarano
 11. Dopo review, classificare i pendenti ed eseguire commit e push selettivi dall'interfaccia VS Code. Il commit salva la storia locale; il push pubblica il commit remoto. Una lista modifiche vuota non prova la pubblicazione su GitHub. I file /.codex/config.toml e /.vscode/tasks.json restano locali tramite .git/info/exclude; non si modifica il .gitignore condiviso soltanto per queste preferenze. Nessuno staging globale o push automatico.
 12. Acquisire il nuovo HEAD e verificare la prosecuzione senza assumere compatibili vecchi snapshot o decisioni. Altra repo: prima profilo esplicito, fonti locali, qualificazione limitata e primo uso utile; nessuna operazione DB implicita.
 
-Il percorso ordinario mantiene due passaggi utente: preparazione/Check con review del diff; dopo consenso specifico, Apply con gate, Verify in processo distinto e raccolta unica. L'accorpamento è acquisito nei cicli Instructions e Index; il provisioning dei tre file e la successiva release guard hanno qualificazioni proprie concluse. Non ripetere suite immutate a ogni documento: verificare il nuovo target e i suoi binding correnti. Per ogni nodo completato: percentuale indicativa, stato attuale, prossimo nodo e residuo. Le percentuali non sostituiscono i criteri di chiusura P0–P6.
+Nel percorso nativo storico sono distinti preparazione/Check e consenso specifico per Apply, gate, Verify in processo distinto e raccolta unica. L'accorpamento è acquisito nei cicli Instructions e Index; il provisioning dei tre file e la successiva release guard hanno qualificazioni proprie concluse. Non ripetere suite immutate a ogni documento: verificare il nuovo target e i suoi binding correnti. Per ogni nodo completato: percentuale indicativa, stato attuale, prossimo nodo e residuo. Le percentuali non sostituiscono i criteri di chiusura P0–P6.
+
+## 5.1 Modello ibrido D — scelta della corsia e preimage senza upload ricorrente
+
+Decisione della Control Room del 20 ottobre 2026, nel nodo `CP-AIOS-DWF-CONSOLIDAMENTO-20261020-01`: percorso **C** (pacchetto statico con sostituzione manuale dell'utente) ordinario per documenti Markdown esistenti e tracciati, con root unica, delta definito, rischio contenuto, preimage e layout verificati; percorso **A** (motore nativo qualificato) se richiesto dalla protezione del target, dall'enforcement o da una scelta espressa e praticabile dell'utente. Percorso **B** (nuovo bridge tecnico) escluso dallo scope. Il percorso C non è la vecchia corsia «assistita» nativa comune: in C l'esecutore materiale è l'utente.
+
+**Acquisizione GitHub-first con guardia locale** — Non richiedere l'upload per routine: individuare sempre `repository / branch / SHA / percorso relativo alla root`, non il solo basename; leggere integralmente da GitHub al commit fissato. Codex in VS Code verifica la stessa root, remote, HEAD, upstream, indice, staged/dirty/untracked, flag nascosti, link e impronte SHA-256 byte-esatte dei target; un elenco clean è necessario ma non è da solo prova dell'identità dei byte. I blob Git possono avere LF mentre la working copy ha CRLF. Preparare la rappresentazione dei byte locali dalla fonte Git solo se trasformazioni EOL, BOM, encoding e newline sono note e se **dimensione e SHA-256 ricostruiti coincidono esattamente** con quelli attestati da Codex. Se una conversione non è deterministica o un file è dirty, non forzare equivalenza: acquisire il contenuto locale integrale tramite un canale consentito, eventualmente allegato manuale identificato con root e percorso; se impossibile, dichiarare UNKNOWN. Non chiedere letture o upload già soddisfatti da prove valide; questa ottimizzazione riguarda l'ingresso, non la scelta automatica della corsia di Apply.
+
+Per C, il pacchetto unico esterno alla repository contiene gli originali byte-identici, le postimage complete, il diff per ogni file, manifest con SHA-256 e versioni, layout (BOM/EOL/newline), percorsi relativi alla root e istruzioni di backup/controllo. Prima della copia, ricontrollare sul PC HEAD, indice, stato e SHA-256 dei target; conservare un backup locale integrale esterno. L'utente revisiona i diff e approva **esattamente** i file, poi sostituisce personalmente solo quelli autorizzati. Dopo la copia, acquisire SHA-256/layout/stato Git e rileggere i risultati per review indipendente. L'esito si chiama **verifica documentale assistita**, mai Verify nativo né transazione atomica multi-documento. Se un passaggio è UNKNOWN, preservare evidenze e fermare soltanto la scrittura interessata; nessun retry, cleanup, rollback o fallback.
+
+Documenti protetti, runtime, policy, AGENTS, operazioni speciali o file con vincoli di provisioning richiedono un percorso separato espressamente qualificato; un pacchetto statico non ne aggira il gate. Al primo impedimento strutturale di A, **proporre una sola alternativa** praticabile, motivando garanzie, limiti e interventi; non eseguirla automaticamente e non sviluppare un motore per il solo fatto che A sia indisponibile. Lo scope e il consenso specifico prevalgono.
+
+**Conto degli interventi dell'utente**, compreso il rilascio: C — (1) review e consenso, (2) copia personale e conferma, (3) commit selettivo, (4) push. A — (1) avvio e preparazione, (2) consenso sul Run qualificato con Apply/gate/Verify/raccolta, (3) commit, (4) push. Un trasferimento aggiuntivo, escalation o richiesta di autorizzazione tecnica è contato a parte. Le verifiche automatiche non sono interventi dell'utente; il lavoro materiale della copia resta dichiarato.
 
 ## 6. Comando universale conversazionale
 
@@ -160,17 +176,21 @@ Forma breve adottata:
 ```text
 Avvia la procedura documentale per [PROGETTO].
 Prepara proposte coordinate per i documenti interessati dalle decisioni e dagli esiti verificati di questa sessione.
-Usa il piano AIOS Codex: input locali completi, Check/review prima del consenso; Run accorpato soltanto nel percorso qualificato; provisioning e commit manuale separati.
+Scegli la corsia C/A secondo la §5.1: in C prepara preimage, postimage, diff e verifica della copia dell’utente; in A usa soltanto Check/Run già qualificati. Nessun fallback implicito.
 Segnala prima gli input completi o lo snapshot mancanti e le capacità non ancora abilitate. Non ampliare il perimetro e non ricostruire file da versioni parziali.
 ```
 
 Se il progetto è già identificato nella sessione, basta «Avvia la procedura documentale». La formula è una convenzione documentata di ChatGPT, non una slash command ufficiale del plugin, uno script installato o un trigger garantito da memoria non disponibile. Nelle nuove sessioni questo documento deve essere disponibile.
 
-«Universale» significa richiesta indipendente dal nome del progetto. L'esecuzione resta vincolata a root, profilo, fonti e capacità reali del progetto. Nella versione corrente soltanto la corsia acquisita AIOS è attiva: il comando non può estenderla da solo a LOGOS o Adexima.
+Prima di proporre comandi o esecuzioni leggere, o riusare letture complete e valide, questo manuale, il contratto Safety, il README del collegamento e le istruzioni pertinenti allo snapshot. Dichiarare fonti/versioni, target, corsia C/A, ingresso concretamente disponibile, input e gate. La richiesta avvia soltanto preparazione. Quando un percorso è incompleto, non trasformare un template in comando operativo e applicare la scelta esplicita della §5.1. Il percorso «GitHub-first» non costituisce eccezione ai controlli sui byte della working copy.
+
+«Universale» significa richiesta indipendente dal nome del progetto. L'esecuzione resta vincolata a root, profilo, fonti e capacità reali del progetto. Le capacità native attestate si riferiscono ad AIOS: la corsia C richiede il recepimento delle fonti madre e i propri gate. Il comando non estende automaticamente le capacità a LOGOS o Adexima.
 
 Se mancano le preimage, si avvia soltanto la preparazione/raccolta necessaria, non Apply. Se non ci sono aggiornamenti utili, l'esito è nessun pacchetto necessario, non un aggiornamento artificiale.
 
 ## 7. Contratto del pacchetto per documento
+
+Per la corsia C il pacchetto deve identificare tutti i target per `root + percorso relativo` e distinguere per ciascuno backup/preimage, postimage completa, diff, metadati, hash e gate di sostituzione; il README/manifest non esegue comandi né autorizza le copie. La seguente tabella resta il contratto del percorso nativo storico.
 
 Il formato per documento è stato usato nei cinque cicli P3 tracciati. Un pacchetto coordinato può raccogliere più proposte, senza dichiarare una nuova transazione multi-documento. Il piano storico dei tre non tracciati è stato eseguito tramite provisioning separato. Il manuale ora tracciato può usare un DOC-HANDOFF ordinario per una nuova proposta e un nuovo Check.
 
@@ -635,6 +655,16 @@ della v1.5. L'eventuale adozione metodologica generale rimane
 di competenza della master/Control Room secondo il percorso
 documentale autorizzato.
 
+## 18.3 Checkpoint del nodo DWF ibrido del 20 ottobre 2026 — candidato v1.6
+
+Nodo: `CP-AIOS-DWF-CONSOLIDAMENTO-20261020-01`; decisione metodologica approvata dalla Control Room, non consenso a scrivere. Input decisivi: Rapporto forense R01, Addendum R01-A01 (N1–N5), mandato della microsessione, Runtime/Kernel/Boot/Sistema Fonti e regole di sicurezza sul pin remoto `moody58/AIOS_CORE`, `main`, `55ab1d10f8ffe7cfe1e266a5a12e8793254dba1e`.
+
+Codex ha riferito HEAD locale identico, `main` ↔ `origin/main` a `+0/-0`, indice e working tree puliti, cinque target letti integralmente con hash e dimensioni. Gli allegati locali della stessa acquisizione sono stati confrontati byte per byte con i relativi SHA-256 e, normalizzando soltanto i CRLF degli originali, con i cinque blob Git al pin: tutte e cinque le corrispondenze sono risultate positive. Lo stato effettivo successivo alla consegna dei file richiederà nuova verifica prima della copia. In Codex `ConstrainedLanguage` e filesystem read-only non consentivano l'archivio esterno: questo pacchetto è una **preparazione fuori root**, non una ricevuta Codex né un Verify nativo.
+
+Documenti candidati coordinati: presente manuale, Command Layer, README del collegamento, contratto Safe Document Apply e Project Instructions Runtime. Gli ultimi due sono protetti: ogni futura installazione richiede il percorso tecnico apposito. Per README i pin del collegamento e la qualificazione di eventuale aggiornamento restano da confermare prima di un'Apply; non basta che sia un Markdown tracciato. Restano KEEP AGENTS, motore, profili, CQD, State, Registry, Kernel e i contenuti storici. LOGOS/ADEXIMA e corsia B sono esclusi.
+
+Questa sezione registra **preparazione**, non adozione delle versioni nuove, Apply, Verify, commit, push, aggiornamento della tab ChatGPT o recepimento in Regia. Per ogni eventuale sostituzione servono i gate aggiornati e un consenso specifico, con controllo distinto dei file protetti.
+
 ## 19. CQD, fonti e version history
 
 Fonti primarie interne storiche del 5 ottobre: protocollo STP v1.0, CQD v1.2, Session v1.2, State v1.1, Chat Anchor v1.1, Sistema Fonti v1.0, Boot v1.4, Kernel Manifest v1.2, Runtime Operating Layer v1.4, Project Instructions contenuto v3.1 e contratto Safe Document Apply v0.5 acquisiti dalla release. Il contratto storico mantiene le sue limitazioni: il presente piano non lo aggiorna implicitamente.
@@ -644,6 +674,8 @@ Fonti tecniche: runtime/contract release v0.3; materiali E01–E09; review del p
 CQD: header, indice, sezioni, rimandi e history presenti; stato acquisito, proposto e futuro separati. La v1.2 aggiorna tre range della v1.1 locale tracciata; conserva storico, evidenze del primo ciclo e byte esterni ai range. La v1.1 è stata provisionata e committata. La preparazione della v1.2 non attesta la sua Apply né il PASS del nuovo Check. Metriche calcolate prima dell'esportazione e confrontate con i byte nello ZIP, in `CQD_REPORT.json`, senza autoreferenza del proprio hash nel corpo. Pipeline locale di preparazione verificata; l'integrazione nella root e la review della futura Apply restano distinte.
 
 Version history:
+
+- v1.6 — 2026-10-20 — Recepimento candidato del modello ibrido D: scelta C/A, SOURCE GUARD GitHub-first con verifica byte locali, attivazione N1–N5, pacchetto manuale e conteggio interventi. Nodo CP-AIOS-DWF-CONSOLIDAMENTO-20261020-01; proposta non applicata, senza conferma di Verify/commit/push o trasferimento alla Regia.
 
 - v1.5 — 2026-10-20 — Stato pubblicazione v1.4 verificato; checkpoint R01/A01 e pilota di preparazione statica assistita limitato a questo manuale. Preimage originale preservata, nessuna sostituzione/Apply/Verify nativi o adozione generale attestati dalla proposta.
 

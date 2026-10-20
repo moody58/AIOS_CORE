@@ -1,5 +1,5 @@
 # AIOS --- Command Layer
-Versione: v1.2
+Versione: v1.3
 
 
 Sistema: AIOS
@@ -43,6 +43,9 @@ mantenendo il contesto.
 
 #log --- preparazione di un Incident Report secondo Incident Management;
 la registrazione persistente richiede un'azione autorizzata distinta.
+
+#DOC / «avvia la procedura documentale» --- ingresso conversazionale nel
+workflow; attiva la lettura delle fonti madre e la preparazione, non Apply.
 
 #help --- richiamo della guida operativa del sistema.
 
@@ -132,6 +135,15 @@ mantenerne l'ID. La nuova chat esegue il proprio boot senza presumere letture.
 #log: report con fatti, ipotesi, severità e impatto; ID persistente e
 registrazione soltanto se realmente assegnati e verificati.
 
+#DOC o richiesta naturale equivalente: leggere il manuale, il contratto e
+README pertinenti; determinare root, target, preimage complete, percorso
+C/A realmente disponibile e gate, poi preparare le proposte. Per l'ingresso
+GitHub-first richiedere un pin verificato e il confronto con SHA-256 e layout
+dei file locali, con identificazione per root + percorso relativo. L'Anchor
+#DOC da solo non costituisce né consenso al pacchetto né autorizzazione a
+copia, Check/Apply, provisioning o Git write. In caso di ambiguità reale
+fra semplice documentazione/Anchor e avvio operativo, chiedere conferma.
+
 Prima dell'azione verificare nodo, mandato/scope, fonti/stato, permessi,
 consensi e gate tecnici. Fuori scope: «DEVIAZIONE DAL NODO» e STOP della
 sola azione. Requisito mancante: SAFE MODE mirata, continuando l'analisi
@@ -142,6 +154,8 @@ OUTPUT E VERIFICHE
 Nei passaggi operativi e ai gate indica risultato osservato, evidenze, limiti, decisione e prossimo passo; le conversazioni ordinarie non richiedono rituali di validazione a ogni messaggio. Il nodo si chiude PASS soltanto con risultati richiesti verificati; altrimenti BLOCCATO/FALLITO motivato con checkpoint riutilizzabile.
 
 Storico revisioni
+
+v1.3 — 2026-10-20 — Proposta per il nodo CP-AIOS-DWF-CONSOLIDAMENTO-20261020-01: ingresso #DOC e forma naturale, scelta C/A e acquisizione GitHub-first verificata byte per byte. Non autorizza Apply, provisioning o scritture.
 
 v1.2 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: equivalenti naturali, output e limiti dei comandi, anti-deriva e continuità, OUTPUT E VERIFICHE. Versione proposta in seconda riga; nessun comando tecnico, permesso o registrazione attivato dalla revisione.
 
