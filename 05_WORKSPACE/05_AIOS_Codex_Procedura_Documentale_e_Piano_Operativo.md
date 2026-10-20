@@ -1,12 +1,12 @@
 # 05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo
-Versione: v1.4
+Versione: v1.5
 
 Documento: procedura documentale ChatGPT / Codex in VS Code e piano operativo consolidato
-Data: 2026-10-17
+Data: 2026-10-20
 Sistema: AIOS — progetto AIOS_CORE
 Tipo: documento operativo di workspace, destinato alla repository
 Destinazione: `05_WORKSPACE/05_AIOS_Codex_Procedura_Documentale_e_Piano_Operativo.md`
-Stato del file: proposta v1.4 di chiusura installazione AIOS 0.6-R01; Apply documentale e commit ancora da completare
+Stato del file: proposta v1.5 non applicata; v1.4 pubblicata il 17 ottobre 2026 (commit ea8afe897505a4166b3144e54bb608e266160b8a); nessuna Apply/Verify nativa della v1.4 attestata da tale commit
 Stato della procedura: P6 preservato; collegamento comune AIOS installato e verificato; installazione LOGOS ancora da eseguire
 Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 
@@ -31,6 +31,7 @@ Anchor: #DOC.aios.codex.procedura_documentale.piano_consolidato
 17. Registro dei passi e dei problemi risolti
 18. Convergenza documentale AIOS/LOGOS — preparazione del 16 ottobre 2026
 18.1 Release comune 0.6-R01 — installazione AIOS del 17 ottobre 2026
+18.2 Checkpoint del 20 ottobre 2026 — pilota statico assistito
 19. CQD, fonti e version history
 
 ## 1. Scopo, autorità e regole di aggiornamento
@@ -569,6 +570,71 @@ il precedente descriptor. Nessuna suite immutata si ripete per abitudine.
 Su errore o esito ignoto: STOP, conservare prove e parziali; nessun retry,
 cleanup o rollback automatico. Questa sezione non autorizza altre scritture.
 
+## 18.2 Checkpoint del 20 ottobre 2026 — pilota statico assistito
+
+### Stato delle evidenze e decisioni ancora aperte
+
+La v1.4 del presente manuale risulta pubblicata in `moody58/AIOS_CORE`,
+`main`, nel commit `ea8afe897505a4166b3144e54bb608e266160b8a`
+del 17 ottobre 2026. Il blob pubblicato del target è
+`ab8905e0b2089d14a2d72937896bfc4eb6fd579e`. La pubblicazione
+documentale non dimostra un'Apply o un Verify nativo della v1.4.
+La dicitura «proposta v1.4» nella sezione storica 18.1 si riferisce
+al momento della sua preparazione e rimane conservata come tale.
+Anche l'indicazione in apertura «installazione LOGOS ancora da eseguire»
+è un riferimento storico dello snapshot v1.4, non una verifica
+del progresso LOGOS al 20 ottobre 2026.
+
+Il Rapporto forense interprogetto DWF R01 e l'Addendum progettuale
+R01-A01, datati 20 ottobre 2026, distinguono le garanzie del percorso
+nativo dalle condizioni per un percorso statico manuale assistito.
+L'Addendum raccomanda un modello ibrido D, con percorso C per i
+documenti ordinari ammissibili e nativo A quando motivato; propone
+testi normativi N1-N5. Sono analisi e proposte, non una nuova regola
+canonica adottata con questo documento. Restano distinti l'eventuale
+recepimento della master, gli aggiornamenti delle fonti madre e i
+consensi sulle singole sostituzioni.
+
+### Perimetro e vincoli del pilota autorizzato
+
+La microsessione AIOS ha approvato esclusivamente la preparazione
+della postimage v1.5 di questo manuale, con quattro delta: correzione
+dello stato della v1.4 pubblicata; checkpoint R01/A01; registrazione
+della sperimentazione statica; versione e storico. Non è autorizzata
+la modifica di AGENTS, contratto Safe Document Apply, Runtime,
+CQD, Registry, State, README della release o altri file. Non sono
+adottate nuove capacità multi-documento o un nuovo motore.
+
+L'acquisizione iniziale con Codex in VS Code si è arrestata
+correttamente prima di leggere il target: l'handoff vietava altre
+letture integrali mentre le istruzioni locali AGENTS.md le
+richiedevano. Non si attribuisce a Codex una verifica dei byte o
+delle modifiche locali che non ha svolto. La preimage completa è
+stata invece allegata dall'utente alla conversazione; risulta
+identica, come Git blob, alla v1.4 pubblicata al pin AIOS
+`0c573cb912bf8359fd24220390b733df049dfa1a`.
+Preimage SHA-256: `db9bdbcea0e699e22c56b4d30bf2af3614b1706332e4672d5eaf866df89eaeec`.
+Dimensione: 59.467 byte; UTF-8 senza BOM; EOL LF e newline
+finale. Questo confronto non attesta che la working copy Windows
+sia ancora identica nel momento della futura sostituzione.
+
+Il pilota usa un pacchetto statico con preimage, postimage completa,
+diff, hash e manifest, fuori dalla repository. Prima di un'eventuale
+sostituzione manuale l'utente verifica nuovamente HEAD, stato del
+target e SHA-256 della preimage sul PC, conserva un backup esterno
+integrale e revisiona il diff. Soltanto un consenso successivo e
+specifico permette la copia manuale; la verifica dei byte finali
+deve essere distinta dalla preparazione e non equivale a Verify
+nativo. Qualsiasi divergenza o esito incerto blocca la sostituzione,
+senza retry, pulizia o rollback automatici. Commit e push restano
+manuali e selettivi.
+
+Esito al momento della preparazione v1.5: pacchetto candidato,
+nessuna Apply, nessuna sostituzione in root, nessun commit o push
+della v1.5. L'eventuale adozione metodologica generale rimane
+di competenza della master/Control Room secondo il percorso
+documentale autorizzato.
+
 ## 19. CQD, fonti e version history
 
 Fonti primarie interne storiche del 5 ottobre: protocollo STP v1.0, CQD v1.2, Session v1.2, State v1.1, Chat Anchor v1.1, Sistema Fonti v1.0, Boot v1.4, Kernel Manifest v1.2, Runtime Operating Layer v1.4, Project Instructions contenuto v3.1 e contratto Safe Document Apply v0.5 acquisiti dalla release. Il contratto storico mantiene le sue limitazioni: il presente piano non lo aggiorna implicitamente.
@@ -578,6 +644,8 @@ Fonti tecniche: runtime/contract release v0.3; materiali E01–E09; review del p
 CQD: header, indice, sezioni, rimandi e history presenti; stato acquisito, proposto e futuro separati. La v1.2 aggiorna tre range della v1.1 locale tracciata; conserva storico, evidenze del primo ciclo e byte esterni ai range. La v1.1 è stata provisionata e committata. La preparazione della v1.2 non attesta la sua Apply né il PASS del nuovo Check. Metriche calcolate prima dell'esportazione e confrontate con i byte nello ZIP, in `CQD_REPORT.json`, senza autoreferenza del proprio hash nel corpo. Pipeline locale di preparazione verificata; l'integrazione nella root e la review della futura Apply restano distinte.
 
 Version history:
+
+- v1.5 — 2026-10-20 — Stato pubblicazione v1.4 verificato; checkpoint R01/A01 e pilota di preparazione statica assistita limitato a questo manuale. Preimage originale preservata, nessuna sostituzione/Apply/Verify nativi o adozione generale attestati dalla proposta.
 
 - v1.4 — 2026-10-17 — Esiti della release comune 0.6-R01, installazione AIOS e Verify indipendente, dipendenza esterna e limiti di portabilita; chiusura AIOS prima di LOGOS. Versione in seconda riga, storico finale e byte esterni ai delta preservati. Proposta subordinata al proprio Check, consenso e Apply/Verify.
 
