@@ -1,5 +1,5 @@
 # Documento: 00_AIOS_Session_Protocol
-Versione: v1.5 Sistema: AIOS Tipo: Protocollo operativo di sessione
+Versione: v1.6 Sistema: AIOS Tipo: Protocollo operativo di sessione
 
 Anno: 2026
 
@@ -159,6 +159,27 @@ Quando i criteri di chiusura risultano soddisfatti, applicare la sezione 10 senz
 
 Il controllo resta interno e contestuale: non richiede report rituali a ogni messaggio, né implica un monitor autonomo.
 
+### Gestione operativa degli impedimenti
+
+Un impedimento non comporta automaticamente la chiusura della microsessione.
+
+Quando un'azione è BLOCCATA o UNKNOWN, identificare esplicitamente:
+
+1. Il requisito preciso che impedisce l'azione.
+2. Il prossimo passo concretamente eseguibile.
+3. Il soggetto responsabile di quel passo.
+4. La prova o condizione verificabile necessaria per riprendere.
+
+Prima di chiudere la sessione, verificare se esistono attività lecite e utili ancora eseguibili nel mandato.
+
+Se il passo successivo è già autorizzato ed eseguibile, proseguire autonomamente nella stessa microsessione.
+
+Se manca un consenso specifico o una dipendenza esterna, richiedere soltanto quanto necessario, preservando nodo, contesto e prove acquisite.
+
+Se non è possibile identificare un passo eseguibile, dichiararne la causa e indicare la minima evidenza necessaria per determinarlo.
+
+La gestione dell'impedimento non autorizza retry, fallback, rollback, aggiramento degli STOP, modifiche fuori scope o nuove direzioni implicite.
+
 Durante lo sviluppo operativo AIOS utilizza contestualmente gli Anchor
 pertinenti per marcare i nodi principali della conversazione. Gli Anchor
 sono semantici: non sostituiscono preimage locale completa, postimage,
@@ -291,6 +312,8 @@ Metriche POST: Paragraphs: 69 Characters: 3402 Words: 421 Hash:
 e4d83c20afcd25a0495b975b4539edb230fb6169ed4e1ca59708d92046d07680
 
 # VERSION HISTORY
+
+v1.6 — 2026-10-27 — Nodo CP-AIOS-GESTIONE-IMPEDIMENTI-20261027-01: introdotta nella sezione 7 la gestione operativa degli impedimenti BLOCCATO/UNKNOWN, con requisito, prossimo passo, responsabile e condizione verificabile di ripresa. Preservati controllo dello stallo, gate, divieti e criteri di chiusura precedenti.
 
 v1.5 — 2026-10-27 — Nodo CP-AIOS-EFFICACIA-PROTOCOLLI-20261026-01: introdotto nella sezione 7 il controllo contestuale di avanzamento e la diagnosi mirata di stallo improduttivo; invariati gate, consensi, protezioni e criteri di chiusura. Revisione metodologica circoscritta; gate, consensi e criteri di chiusura invariati.
 
