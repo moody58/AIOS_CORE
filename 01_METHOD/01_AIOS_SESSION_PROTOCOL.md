@@ -1,5 +1,5 @@
 # Documento: 00_AIOS_Session_Protocol
-Versione: v1.4 Sistema: AIOS Tipo: Protocollo operativo di sessione
+Versione: v1.5 Sistema: AIOS Tipo: Protocollo operativo di sessione
 
 Anno: 2026
 
@@ -145,6 +145,20 @@ Non aprire nuovi nodi, audit globali, anticipazioni di roadmap o refactor
 non richiesti. Su errore o UNKNOWN conservare prove e parziali, senza retry,
 cleanup o rollback automatici.
 
+### Controllo di avanzamento e gestione dello stallo
+
+Durante una microsessione, prima di intraprendere un nuovo ciclo di lavoro sul medesimo problema, confrontare il passo proposto con il mandato, i risultati già ottenuti, le prove valide e i criteri di chiusura.
+
+Costituiscono avanzamento effettivo una nuova prova pertinente, un risultato richiesto, la risoluzione di una dipendenza o una decisione necessaria e autorizzata. La sola ripetizione di analisi, letture, verifiche o formulazioni non costituisce avanzamento.
+
+Se due passaggi consecutivi equivalenti non producono avanzamento sullo stesso problema, a condizioni sostanzialmente immutate, attivare una verifica mirata dello stallo. La soglia è un segnale diagnostico, non un arresto automatico della microsessione.
+
+Identificare ciò che è già dimostrato, la causa dell'assenza di progresso e l'eventuale nuova condizione necessaria. Non ripetere il passaggio senza un requisito nuovo o una variazione materiale. Continuare gli altri lavori leciti e indipendenti, senza aggirare STOP, gate tecnici o consensi.
+
+Quando i criteri di chiusura risultano soddisfatti, applicare la sezione 10 senza introdurre ulteriori controlli, nodi o attività non richiesti. Se una dipendenza indispensabile impedisce la conclusione, produrre un checkpoint d'impedimento riutilizzabile, distinguendo la sessione dal nodo complessivo.
+
+Il controllo resta interno e contestuale: non richiede report rituali a ogni messaggio, né implica un monitor autonomo.
+
 Durante lo sviluppo operativo AIOS utilizza contestualmente gli Anchor
 pertinenti per marcare i nodi principali della conversazione. Gli Anchor
 sono semantici: non sostituiscono preimage locale completa, postimage,
@@ -277,6 +291,8 @@ Metriche POST: Paragraphs: 69 Characters: 3402 Words: 421 Hash:
 e4d83c20afcd25a0495b975b4539edb230fb6169ed4e1ca59708d92046d07680
 
 # VERSION HISTORY
+
+v1.5 — 2026-10-27 — Nodo CP-AIOS-EFFICACIA-PROTOCOLLI-20261026-01: introdotto nella sezione 7 il controllo contestuale di avanzamento e la diagnosi mirata di stallo improduttivo; invariati gate, consensi, protezioni e criteri di chiusura. Revisione metodologica circoscritta; gate, consensi e criteri di chiusura invariati.
 
 v1.4 — 2026-10-19 — Nodo CP-ALLINEAMENTO-AIOS-20261019-01: ruoli e autonomia, blocchi d'apertura/ripresa, anti-deriva preventivo e SAFE MODE selettiva, continuità e recap, stati di chiusura e SYNC senza scrittura implicita. Versione proposta in seconda riga; report CQD e voci precedenti conservati.
 

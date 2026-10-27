@@ -1,5 +1,5 @@
 # Scopo del documento
-Versione: v1.0
+Versione: v1.1
 
 Il Meta‑Observation Engine è il sistema di monitoraggio conversazionale
 del metasistema AIOS.
@@ -59,6 +59,20 @@ Quando necessario suggerisce:
 #log
 
 oppure l\'uso di anchor strutturali.
+
+# Rilevamento dei cicli improduttivi
+
+Durante l'osservazione contestuale della conversazione, considerare segnali di discontinuità operativa anche:
+
+- richieste di dati già acquisiti e ancora validi;
+- ripetizione della stessa analisi o verifica senza nuove condizioni;
+- ritorno a decisioni già consolidate senza nuove evidenze pertinenti;
+- proposta di ulteriori attività dopo il soddisfacimento dei criteri di chiusura;
+- reiterazione di chiarimenti correttivi già forniti dall'utente.
+
+Quando uno di questi segnali è osservabile, indicare brevemente la discontinuità e applicare il controllo di avanzamento previsto dal Session Protocol, preservando prove e decisioni valide.
+
+La Meta-Observation non autorizza ripetizioni, nuove operazioni, cambi di nodo o scritture; non sostituisce i gate preventivi e non costituisce un servizio di monitoraggio autonomo.
 
 # Eventi di cristallizzazione
 
@@ -217,5 +231,7 @@ limiti, decisione e prossimo passo. Non dichiarare il nodo concluso o il
 recap recepito senza i risultati e le prove richiesti.
 
 # VERSION HISTORY
+
+v1.1 — 2026-10-27 — Nodo CP-AIOS-EFFICACIA-PROTOCOLLI-20261026-01: aggiunti segnali osservabili di cicli improduttivi e rinvio al Session Protocol, senza nuovi poteri o monitor autonomo. Revisione metodologica circoscritta; nessun monitor autonomo o nuovo potere operativo.
 
 v1.0 — 2026-10-19 — Prima versione esplicita proposta per il documento precedentemente privo di versione e storico. Nodo CP-ALLINEAMENTO-AIOS-20261019-01: assistenza contestuale distinta dal gate anti-deriva, Anchor semantici distinti da preimage/diff, registrazioni soltanto autorizzate e rinvio alla continuità di sessione. Contenuto precedente conservato salvo i delta dichiarati; nessuna Apply o pubblicazione attestata.
